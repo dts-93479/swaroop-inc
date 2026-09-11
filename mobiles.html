@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SWAROOP.inc | Bespoke Telephony & Mobile Communicators</title>
+
+  <!-- Google Fonts: Old Money Serifs & Classic Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Playfair+Display:ital,wght@0,600;0,800;1,400&display=swap" rel="stylesheet">
+
+  <!-- Master CSS (Root reference ../css/style.css) -->
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body class="heritage-body">
+
+  <!-- Announcement Bar -->
+  <div class="vintage-announcement-bar">
+    <p>📱 <em>Department I: Telephony</em> &nbsp;•&nbsp; Fluted Titanium, Solid 24K Inlays & Cryptographic Security</p>
+  </div>
+
+  <!-- Global Header -->
+  <header class="master-header">
+    <div class="header-top-row">
+      <div class="locale-pill" onclick="window.location.href='../index.html'" title="Alter sovereignty & currency">
+        <span class="globe-icon">🌐</span>
+        <span id="displayCountry">Sovereign State: US</span> | 
+        <strong id="displayCurrency">USD ($)</strong>
+      </div>
+
+      <div class="brand-crest">
+        <a href="../home.html" class="brand-link">
+          <span class="monogram">S</span>
+          <h1 class="nav-brand-title">SWAROOP<span>.inc</span></h1>
+        </a>
+      </div>
+
+      <div class="header-utilities">
+        <a href="../user/account.html" class="util-link" title="Client Dossier">
+          <span class="util-icon">👤</span>
+          <span class="util-text">Dossier</span>
+        </a>
+        <a href="../user/wishlist.html" class="util-link" title="Wishlist">
+          <span class="util-icon">⚜️</span>
+          <span class="util-text">Saved (<span id="wishlistCount">0</span>)</span>
+        </a>
+        <a href="../user/cart.html" class="util-link cart-pill" title="Shopping Cart">
+          <span class="util-icon">💼</span>
+          <span class="util-text">Trunk (<span id="cartCount">0</span>)</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="master-nav">
+      <ul class="nav-links">
+        <li><a href="../home.html">Home Salon</a></li>
+        <li><a href="categories.html">All Categories</a></li>
+        <li><a href="mobiles.html" class="active">Bespoke Mobiles</a></li>
+        <li><a href="electronics.html">Vintage Electronics</a></li>
+        <li><a href="clothes.html">Attire</a></li>
+        <li><a href="footwear.html">Footwear</a></li>
+        <li><a href="../user/account.html">Client Dossier</a></li>
+        <li><a href="../support/contact.html">Concierge Desk</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Department Container -->
+  <main class="section-container category-page-container">
+
+    <!-- Breadcrumb -->
+    <nav class="vintage-breadcrumbs">
+      <a href="../home.html">Emporium</a>
+      <span class="sep">/</span>
+      <a href="categories.html">Departments</a>
+      <span class="sep">/</span>
+      <span class="current">Bespoke Mobiles</span>
+    </nav>
+
+    <!-- Department Header Banner -->
+    <div class="category-header-banner vintage-frame">
+      <div class="corner-ornament corner-tl"></div>
+      <div class="corner-ornament corner-tr"></div>
+      <div class="corner-ornament corner-bl"></div>
+      <div class="corner-ornament corner-br"></div>
+
+      <span class="dept-index-roman">DEPARTMENT I</span>
+      <h2 class="category-title">Bespoke Mobile Communicators</h2>
+      <div class="divider-ornament"><span class="diamond">◆</span></div>
+      <p class="category-description">
+        State-of-the-art computational processors forged with precious metals, British saddle leather backings, and scratchproof sapphire glass. Every piece carries an engraved serial cataloged in the SWAROOP archives.
+      </p>
+    </div>
+
+    <!-- Filter & Sort Controls -->
+    <div class="catalog-controls-bar">
+      <div class="filter-group">
+        <label for="materialFilter">Chassis Material:</label>
+        <div class="select-wrapper">
+          <select id="materialFilter" onchange="filterProductsByMaterial(this.value)">
+            <option value="all">All Forged Finishes</option>
+            <option value="gold">24K Gold Guilloché</option>
+            <option value="titanium">Grade 5 Brushed Titanium</option>
+            <option value="ceramic">High-Gloss Black Ceramic</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <label for="priceSort">Order Ledger:</label>
+        <div class="select-wrapper">
+          <select id="priceSort" onchange="sortCatalogProducts(this.value)">
+            <option value="curated">Curator's Choice</option>
+            <option value="asc">Valuation: Modest to Sovereign</option>
+            <option value="desc">Valuation: Sovereign to Modest</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product Grid for Mobiles -->
+    <div class="product-grid" id="mobilesProductGrid">
+
+      <!-- Product 1 -->
+      <article class="product-card" data-id="P101" data-material="gold">
+        <span class="deal-ribbon">20% Courtesy</span>
+        <div class="product-img-box">
+          <span class="mock-item-art">📱</span>
+        </div>
+        <div class="product-details">
+          <span class="product-category">Telephony • 24K Gold</span>
+          <h4 class="product-name">Monarch Gold Titanium Phone</h4>
+          <p class="product-desc">Fluted gold frame, 512GB encrypted memory, and sapphire display.</p>
+          <div class="price-wrap">
+            <span class="original-price" data-base-price="1200">$1,200</span>
+            <span class="current-price" data-base-price="960">$960</span>
+          </div>
+          <div class="card-btn-group">
+            <button class="btn-small-gold" onclick="handleAddToCart('P101')">Add to Trunk</button>
+            <button class="btn-small-icon" onclick="handleAddToWishlist('P101')" title="Add to Wishlist">⚜️</button>
+            <a href="product-details.html?id=P101" class="btn-small-outline">Inspect</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Product 2 -->
+      <article class="product-card" data-id="P105" data-material="titanium">
+        <div class="product-img-box">
+          <span class="mock-item-art">📱</span>
+        </div>
+        <div class="product-details">
+          <span class="product-category">Telephony • Aerospace Grade</span>
+          <h4 class="product-name">Vanguard Brushed Titanium Slate</h4>
+          <p class="product-desc">Grade 5 titanium unibody, satellite dispatch capability, and anti-glare screen.</p>
+          <div class="price-wrap">
+            <span class="current-price" data-base-price="1450">$1,450</span>
+          </div>
+          <div class="card-btn-group">
+            <button class="btn-small-gold" onclick="handleAddToCart('P105')">Add to Trunk</button>
+            <button class="btn-small-icon" onclick="handleAddToWishlist('P105')" title="Add to Wishlist">⚜️</button>
+            <a href="product-details.html?id=P105" class="btn-small-outline">Inspect</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Product 3 -->
+      <article class="product-card" data-id="P106" data-material="ceramic">
+        <span class="deal-ribbon">New Acquisition</span>
+        <div class="product-img-box">
+          <span class="mock-item-art">📱</span>
+        </div>
+        <div class="product-details">
+          <span class="product-category">Telephony • High Ceramic</span>
+          <h4 class="product-name">Obsidian Ceramic Communicator</h4>
+          <p class="product-desc">Zirconia mirror ceramic back with emerald-cut ruby camera bezels.</p>
+          <div class="price-wrap">
+            <span class="current-price" data-base-price="1800">$1,800</span>
+          </div>
+          <div class="card-btn-group">
+            <button class="btn-small-gold" onclick="handleAddToCart('P106')">Add to Trunk</button>
+            <button class="btn-small-icon" onclick="handleAddToWishlist('P106')" title="Add to Wishlist">⚜️</button>
+            <a href="product-details.html?id=P106" class="btn-small-outline">Inspect</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Product 4 -->
+      <article class="product-card" data-id="P107" data-material="gold">
+        <div class="product-img-box">
+          <span class="mock-item-art">📱</span>
+        </div>
+        <div class="product-details">
+          <span class="product-category">Telephony • Bespoke Leather</span>
+          <h4 class="product-name">Sovereign Havana Foldable</h4>
+          <p class="product-desc">Dual folding flexible OLED wrapped in full-grain French calfskin leather.</p>
+          <div class="price-wrap">
+            <span class="original-price" data-base-price="2400">$2,400</span>
+            <span class="current-price" data-base-price="2150">$2,150</span>
+          </div>
+          <div class="card-btn-group">
+            <button class="btn-small-gold" onclick="handleAddToCart('P107')">Add to Trunk</button>
+            <button class="btn-small-icon" onclick="handleAddToWishlist('P107')" title="Add to Wishlist">⚜️</button>
+            <a href="product-details.html?id=P107" class="btn-small-outline">Inspect</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- Concierge Note for Department -->
+    <section class="concierge-cta-bar" style="margin-top: 4rem;">
+      <div class="cta-inner">
+        <div class="cta-text">
+          <h3>Require Custom Precious Metal Inscriptions?</h3>
+          <p>Our Geneva workshop can engrave family crests, sovereign monograms, or custom cipher keys onto any titanium chassis.</p>
+        </div>
+        <div class="cta-buttons">
+          <a href="../support/support-chat.html" class="btn-retro-gold">Request Custom Engraving</a>
+          <a href="../support/contact.html" class="btn-retro-outline">Boutique Helplines</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Master Footer -->
+  <footer class="master-footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4 class="footer-brand">SWAROOP<span>.inc</span></h4>
+        <p class="footer-about">
+          A timeless emporium dedicated to refined taste, mechanical excellence, and tailored craftsmanship.
+        </p>
+        <p class="footer-support-phone">Helpline: +1 (800) 555-SWAROOP</p>
+      </div>
+
+      <div class="footer-col">
+        <h5>Sovereign Departments</h5>
+        <ul>
+          <li><a href="mobiles.html">Mobiles & Telephony</a></li>
+          <li><a href="electronics.html">Vintage Electronics</a></li>
+          <li><a href="clothes.html">Bespoke Attire</a></li>
+          <li><a href="footwear.html">Cordwainer Footwear</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Client Privileges</h5>
+        <ul>
+          <li><a href="../user/account.html">Client Dossier</a></li>
+          <li><a href="../user/order-tracking.html">Track Consignment</a></li>
+          <li><a href="../user/cart.html">Shopping Trunk</a></li>
+          <li><a href="../user/wishlist.html">Curated Desiderata</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Sovereignty & Terms</h5>
+        <ul>
+          <li><a href="../index.html">Change Territory / Currency</a></li>
+          <li><a href="../support/contact.html">Private Helplines</a></li>
+          <li><a href="../support/support-chat.html">Live Desk Support</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© MMXXVI SWAROOP.inc Private Limited. All Telephony Devices Certified by Sovereign Telecommunications Council.</p>
+    </div>
+  </footer>
+
+  <!-- Master JavaScript -->
+  <script src="../js/script.js"></script>
+</body>
+</html>

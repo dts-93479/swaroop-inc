@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SWAROOP.inc | Grand Emporium & Heritage Living</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Playfair+Display:ital,wght@0,600;0,800;1,400&display=swap" rel="stylesheet">
+
+  <!-- Master CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="heritage-body">
+
+  <!-- Announcement / Deals Top Banner -->
+  <div class="vintage-announcement-bar">
+    <p>👑 <em>The Autumn Equinox Salon</em> — Enjoy 15% Bespoke Courtesy with code <strong>HERITAGE15</strong> at checkout &nbsp;•&nbsp; Complimentary Courier Worldwide</p>
+  </div>
+
+  <!-- Global Header & Navigation -->
+  <header class="master-header">
+    <div class="header-top-row">
+      <!-- Territory / Currency Status Tag -->
+      <div class="locale-pill" id="localePill" onclick="window.location.href='index.html'" title="Click to alter sovereignty & currency">
+        <span class="globe-icon">🌐</span>
+        <span id="displayCountry">Sovereign State: US</span> | 
+        <strong id="displayCurrency">USD ($)</strong>
+      </div>
+
+      <!-- Center Crest & Brand Name -->
+      <div class="brand-crest">
+        <a href="home.html" class="brand-link">
+          <span class="monogram">S</span>
+          <h1 class="nav-brand-title">SWAROOP<span>.inc</span></h1>
+        </a>
+      </div>
+
+      <!-- User Account, Wishlist & Cart Links -->
+      <div class="header-utilities">
+        <a href="auth/login.html" class="util-link" title="Private Account Access">
+          <span class="util-icon">👤</span>
+          <span class="util-text">Account</span>
+        </a>
+        <a href="user/wishlist.html" class="util-link" title="Wishlist">
+          <span class="util-icon">⚜️</span>
+          <span class="util-text">Saved (<span id="wishlistCount">0</span>)</span>
+        </a>
+        <a href="user/cart.html" class="util-link cart-pill" title="Shopping Cart">
+          <span class="util-icon">💼</span>
+          <span class="util-text">Cart (<span id="cartCount">0</span>)</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Main Navigation Bar -->
+    <nav class="master-nav">
+      <ul class="nav-links">
+        <li><a href="home.html" class="active">Home Salon</a></li>
+        <li><a href="catalog/categories.html">All Categories</a></li>
+        <li><a href="catalog/mobiles.html">Bespoke Mobiles</a></li>
+        <li><a href="catalog/electronics.html">Vintage Electronics</a></li>
+        <li><a href="catalog/clothes.html">Gentlemen & Ladies Attire</a></li>
+        <li><a href="catalog/footwear.html">Handcrafted Footwear</a></li>
+        <li><a href="user/account.html">Client Dossier & Orders</a></li>
+        <li><a href="support/contact.html">Concierge Desk</a></li>
+        <li><a href="support/support-chat.html" class="chat-tab-link">✦ Live Chat</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="retro-hero">
+    <div class="hero-content">
+      <p class="hero-sub">AUTUMN / WINTER MMXXVI EDITION</p>
+      <h2 class="hero-heading">Elegance Never Depreciates.</h2>
+      <p class="hero-description">
+        Curated antiquities, modern mechanics encased in precious metals, and tailoring inspired by the golden era of estates.
+      </p>
+      <div class="hero-actions">
+        <a href="catalog/categories.html" class="btn-retro-gold">Explore The Collection</a>
+        <a href="#limitedDeals" class="btn-retro-outline">Exclusive Privileges</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Value & Heritage Pillars -->
+  <section class="heritage-pillars">
+    <div class="pillar">
+      <span class="pillar-icon">⚜️</span>
+      <h3>Heritage Provenance</h3>
+      <p>Hand-selected items inspected under strict standards of longevity.</p>
+    </div>
+    <div class="pillar">
+      <span class="pillar-icon">🗝️</span>
+      <h3>Discreet Transit</h3>
+      <p>Reinforced vintage cases delivered privately to your residence.</p>
+    </div>
+    <div class="pillar">
+      <span class="pillar-icon">🏛️</span>
+      <h3>Bespoke Assistance</h3>
+      <p>24/7 dedicated butler chat and personal concierge support.</p>
+    </div>
+  </section>
+
+  <!-- Four Core Category Portals -->
+  <section class="section-container">
+    <div class="section-heading-wrap">
+      <h2 class="section-title">The Four Sovereign Departments</h2>
+      <div class="divider-ornament"><span class="diamond">◆</span></div>
+      <p class="section-subtitle">Select a quarter to view tailored acquisitions</p>
+    </div>
+
+    <div class="category-grid">
+      <!-- Mobiles -->
+      <a href="catalog/mobiles.html" class="category-card">
+        <div class="cat-image-wrapper">
+          <div class="cat-placeholder-art mobile-art">📱</div>
+        </div>
+        <div class="cat-info">
+          <h3>Mobiles & Telephony</h3>
+          <p>Titanium chassis, sapphire displays, and custom leather casings.</p>
+          <span class="cat-link-text">Browse Mobiles &rarr;</span>
+        </div>
+      </a>
+
+      <!-- Electronics -->
+      <a href="catalog/electronics.html" class="category-card">
+        <div class="cat-image-wrapper">
+          <div class="cat-placeholder-art electronics-art">🎙️</div>
+        </div>
+        <div class="cat-info">
+          <h3>Vintage Electronics</h3>
+          <p>Vacuum-tube acoustics, mechanical keyboards, and classic audio.</p>
+          <span class="cat-link-text">Browse Electronics &rarr;</span>
+        </div>
+      </a>
+
+      <!-- Clothes -->
+      <a href="catalog/clothes.html" class="category-card">
+        <div class="cat-image-wrapper">
+          <div class="cat-placeholder-art clothes-art">🧥</div>
+        </div>
+        <div class="cat-info">
+          <h3>Attire & Tailoring</h3>
+          <p>Cashmere trenchcoats, houndstooth blazers, and silk weaves.</p>
+          <span class="cat-link-text">Browse Clothing &rarr;</span>
+        </div>
+      </a>
+
+      <!-- Footwear -->
+      <a href="catalog/footwear.html" class="category-card">
+        <div class="cat-image-wrapper">
+          <div class="cat-placeholder-art footwear-art">👞</div>
+        </div>
+        <div class="cat-info">
+          <h3>Cordwainer Footwear</h3>
+          <p>Goodyear-welted brogues, leather Chelsea boots, and velvet loafers.</p>
+          <span class="cat-link-text">Browse Footwear &rarr;</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- Limited Royal Deals & Offers -->
+  <section class="section-container deals-section" id="limitedDeals">
+    <div class="section-heading-wrap">
+      <span class="vintage-badge">PRIVATE OFFERINGS</span>
+      <h2 class="section-title">Featured Deals of The Season</h2>
+      <div class="divider-ornament"><span class="diamond">◆</span></div>
+    </div>
+
+    <!-- Product Grid (Dynamic Currency Converter will parse data-price in JS) -->
+    <div class="product-grid" id="featuredProducts">
+      
+      <!-- Card 1 -->
+      <article class="product-card" data-id="P101">
+        <span class="deal-ribbon">20% Off</span>
+        <div class="product-img-box">
+          <span class="mock-item-art">📱</span>
+        </div>
+        <div class="product-details">
+          <span class="product-category">Telephony</span>
+          <h4 class="product-name">Monarch Gold Titanium Phone</h4>
+          <p class="product-desc">Fluted gold frame with aerospace-grade sapphire screen.</p>
+          <div class="price-wrap">
+            <span class="original-price" data-base-price="1200">$1,200</span>
+            <span class="current-price" data-base-price="960">$960</span>
+          </div>
+          <div class="card-btn-group">
+            <button class="btn-small-gold" onclick="handleAddToCart('P101')">Add to Cart</button>
+            <button class="btn-small-icon" onclick="handleAddToWishlist('P101')" title="Add to Wishlist">⚜️</button>
+            <a href="catalog/product-details.html?id=P101" class="btn-small-outline">Inspect</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="product-card" data-id="P102">
+        <span class="deal-ribbon">Privilege Offer</span>
+        <div class="product-img-box">
+          <span class="mock-item-art">📻</span>
+        </div>
+        <div class="product-details">
+          <span class="product-category">Acoustics</span>
+          <h4 class="product-name">Bespoke Walnut Valve Amplifier</h4>
+          <p class="product-desc">Hand-wound transformers and hand-polished solid walnut casing.</p>
+          <div class="price-wrap">
+            <span class="original-price" data-base-price="850">$850</span>
+            <span class="current-price" data-base-price="720">$720</span>
+          </div>
+          <div class="card-btn-group">
+            <button class="btn-small-gold" onclick="handleAddToCart('P102')">Add to Cart</button>
+            <button class="btn-small-icon" onclick="handleAddToWishlist('P102')" title="Add to Wishlist">⚜️</button>
+            <a href="catalog/product-details.html?id=P102" class="btn-small-outline">Inspect</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="product-card" data-id="P103">
+        <span class="deal-ribbon">Autumn Special</span>
+        <div class="product-img-box">
+          <span class="mock-item-art">🧥</span>
+        </div>
+        <div class="product-details">
+          <span class="product-category">Apparel</span>
+          <h4 class="product-name">Double-Breasted Cashmere Overcoat</h4>
+          <p class="product-desc">100% Mongolian combed cashmere with horn buttons.</p>
+          <div class="price-wrap">
+            <span class="original-price" data-base-price="600">$600</span>
+            <span class="current-price" data-base-price="490">$490</span>
+          </div>
+          <div class="card-btn-group">
+            <button class="btn-small-gold" onclick="handleAddToCart('P103')">Add to Cart</button>
+            <button class="btn-small-icon" onclick="handleAddToWishlist('P103')" title="Add to Wishlist">⚜️</button>
+            <a href="catalog/product-details.html?id=P103" class="btn-small-outline">Inspect</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 4 -->
+      <article class="product-card" data-id="P104">
+        <span class="deal-ribbon">15% Off</span>
+        <div class="product-img-box">
+          <span class="mock-item-art">👞</span>
+        </div>
+        <div class="product-details">
+          <span class="product-category">Footwear</span>
+          <h4 class="product-name">Hand-Burnished Oxford Brogues</h4>
+          <p class="product-desc">Goodyear welted calfskin with antique cognac patina finish.</p>
+          <div class="price-wrap">
+            <span class="original-price" data-base-price="450">$450</span>
+            <span class="current-price" data-base-price="380">$380</span>
+          </div>
+          <div class="card-btn-group">
+            <button class="btn-small-gold" onclick="handleAddToCart('P104')">Add to Cart</button>
+            <button class="btn-small-icon" onclick="handleAddToWishlist('P104')" title="Add to Wishlist">⚜️</button>
+            <a href="catalog/product-details.html?id=P104" class="btn-small-outline">Inspect</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- Live Concierge Invitation Bar -->
+  <section class="concierge-cta-bar">
+    <div class="cta-inner">
+      <div class="cta-text">
+        <h3>Require Immediate Consultation?</h3>
+        <p>Our online private butler desk is at your disposal for questions regarding sizing, shipping, or bespoke requests.</p>
+      </div>
+      <div class="cta-buttons">
+        <a href="support/support-chat.html" class="btn-retro-gold">Summon Online Concierge</a>
+        <a href="support/contact.html" class="btn-retro-outline">Helpline Numbers</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Master Heritage Footer -->
+  <footer class="master-footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4 class="footer-brand">SWAROOP<span>.inc</span></h4>
+        <p class="footer-about">
+          A timeless emporium dedicated to refined taste, mechanical excellence, and tailored craftsmanship.
+        </p>
+        <p class="footer-support-phone">Helpline: +1 (800) 555-SWAROOP</p>
+        <p class="footer-support-email">concierge@swaroop.inc</p>
+      </div>
+
+      <div class="footer-col">
+        <h5>Boutique Departments</h5>
+        <ul>
+          <li><a href="catalog/mobiles.html">Mobiles & Telephony</a></li>
+          <li><a href="catalog/electronics.html">Vintage Electronics</a></li>
+          <li><a href="catalog/clothes.html">Bespoke Attire</a></li>
+          <li><a href="catalog/footwear.html">Cordwainer Footwear</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Client Privileges</h5>
+        <ul>
+          <li><a href="user/account.html">Client Dossier & Profile</a></li>
+          <li><a href="user/order-tracking.html">Track Consignment</a></li>
+          <li><a href="user/cart.html">Shopping Trunk (Cart)</a></li>
+          <li><a href="user/wishlist.html">Curated Wishlist</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Sovereignty & Terms</h5>
+        <ul>
+          <li><a href="index.html">Change Territory / Language</a></li>
+          <li><a href="support/contact.html">Private Helplines</a></li>
+          <li><a href="support/support-chat.html">Live Desk Support</a></li>
+          <li><a href="#">Terms of Sovereign Trade</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© MMXXVI SWAROOP.inc Private Limited. Handcrafted with Old-Money Precision.</p>
+    </div>
+  </footer>
+
+  <!-- Master JavaScript -->
+  <script src="js/script.js"></script>
+</body>
+</html>

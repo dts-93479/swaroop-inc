@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SWAROOP.inc | Private Butler & Live Concierge Desk</title>
+
+  <!-- Google Fonts: Old Money Serifs & Classic Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Playfair+Display:ital,wght@0,600;0,800;1,400&display=swap" rel="stylesheet">
+
+  <!-- Master CSS (Root reference ../css/style.css) -->
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body class="heritage-body">
+
+  <!-- Announcement Bar -->
+  <div class="vintage-announcement-bar">
+    <p>💬 <em>Private Parlor Wire</em> &nbsp;•&nbsp; Direct Encrypted Transmission to the Chief Butler's Bureau</p>
+  </div>
+
+  <!-- Global Header -->
+  <header class="master-header">
+    <div class="header-top-row">
+      <div class="locale-pill" onclick="window.location.href='../index.html'" title="Alter sovereignty & currency">
+        <span class="globe-icon">🌐</span>
+        <span id="displayCountry">Sovereign State: US</span> | 
+        <strong id="displayCurrency">USD ($)</strong>
+      </div>
+
+      <div class="brand-crest">
+        <a href="../home.html" class="brand-link">
+          <span class="monogram">S</span>
+          <h1 class="nav-brand-title">SWAROOP<span>.inc</span></h1>
+        </a>
+      </div>
+
+      <div class="header-utilities">
+        <a href="../user/account.html" class="util-link" title="Client Dossier">
+          <span class="util-icon">👤</span>
+          <span class="util-text">Dossier</span>
+        </a>
+        <a href="../user/wishlist.html" class="util-link" title="Wishlist">
+          <span class="util-icon">⚜️</span>
+          <span class="util-text">Saved (<span id="wishlistCount">0</span>)</span>
+        </a>
+        <a href="../user/cart.html" class="util-link cart-pill" title="Shopping Cart">
+          <span class="util-icon">💼</span>
+          <span class="util-text">Trunk (<span id="cartCount">0</span>)</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="master-nav">
+      <ul class="nav-links">
+        <li><a href="../home.html">Home Salon</a></li>
+        <li><a href="../catalog/categories.html">All Categories</a></li>
+        <li><a href="../catalog/mobiles.html">Bespoke Mobiles</a></li>
+        <li><a href="../catalog/electronics.html">Vintage Electronics</a></li>
+        <li><a href="../catalog/clothes.html">Attire</a></li>
+        <li><a href="../catalog/footwear.html">Footwear</a></li>
+        <li><a href="../user/account.html">Client Dossier</a></li>
+        <li><a href="contact.html">Concierge Desk</a></li>
+        <li><a href="support-chat.html" class="active chat-tab-link">✦ Live Chat</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Support Chat Container -->
+  <main class="section-container chat-page-container">
+
+    <!-- Header Wrap -->
+    <div class="section-heading-wrap">
+      <span class="vintage-badge">TELEGRAPHIC DISPATCH</span>
+      <h2 class="section-title">Live Butler & Concierge Parlor</h2>
+      <div class="divider-ornament"><span class="diamond">◆</span></div>
+      <p class="section-subtitle">Real-time consultation for consignment status, bespoke sizing, and estate commissions</p>
+    </div>
+
+    <!-- Main Chat Window Card -->
+    <div class="vintage-frame chat-console-frame">
+      <div class="corner-ornament corner-tl"></div>
+      <div class="corner-ornament corner-tr"></div>
+      <div class="corner-ornament corner-bl"></div>
+      <div class="corner-ornament corner-br"></div>
+
+      <!-- Chat Officer Header -->
+      <div class="chat-header-bar">
+        <div class="butler-profile">
+          <div class="butler-avatar">
+            <span>🤵‍♂️</span>
+            <span class="live-dot" title="Actively on duty"></span>
+          </div>
+          <div class="butler-info">
+            <h4>Chief Butler Archibald</h4>
+            <p>Senior Curator & Master of Estate Logistics &nbsp;•&nbsp; <span class="text-online">Present in Salon</span></p>
+          </div>
+        </div>
+        <div class="chat-header-tools">
+          <button type="button" class="btn-small-outline" onclick="clearChatMessages()" title="Clear Parlor Transcript">Erase Ledger</button>
+          <a href="contact.html" class="btn-small-gold">Voice Helplines 📞</a>
+        </div>
+      </div>
+
+      <!-- Chat Messages Scrollable Log -->
+      <div class="chat-viewport" id="chatMessageLog">
+        
+        <!-- Welcome Message from Butler -->
+        <div class="chat-bubble-row butler-row">
+          <div class="bubble-avatar">🤵‍♂️</div>
+          <div class="bubble-content">
+            <span class="bubble-sender">Chief Butler Archibald</span>
+            <p>Greetings, honored patron. It is my distinct privilege to attend to your desires today. How may I be of service regarding your acquisitions, estate deliveries, or bespoke commissions?</p>
+            <span class="bubble-timestamp">Just now</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Quick Inquiry Prompt Chips -->
+      <div class="quick-inquiry-chips">
+        <span class="chips-label">Common Dispatches:</span>
+        <button type="button" class="chip-btn" onclick="sendQuickPrompt('Where is my consignment right now?')">
+          📦 Track My Consignment
+        </button>
+        <button type="button" class="chip-btn" onclick="sendQuickPrompt('How are sovereign currencies converted?')">
+          💱 Currency Protocols
+        </button>
+        <button type="button" class="chip-btn" onclick="sendQuickPrompt('What is the code for the 15% privilege discount?')">
+          👑 Autumn Privilege Code
+        </button>
+        <button type="button" class="chip-btn" onclick="sendQuickPrompt('Can I commission a custom gold inscription?')">
+          ✒️ Bespoke Inscriptions
+        </button>
+      </div>
+
+      <!-- Input Bar Form -->
+      <form id="chatForm" class="chat-input-bar" onsubmit="handleChatSend(event)">
+        <div class="chat-input-wrapper">
+          <input 
+            type="text" 
+            id="chatUserInput" 
+            class="vintage-input chat-input-field" 
+            placeholder="Articulate your request to Butler Archibald..." 
+            autocomplete="off" 
+            required 
+          />
+          <button type="submit" class="btn-retro-gold chat-send-btn">
+            <span>Transmit</span>
+            <span class="arrow">&rarr;</span>
+          </button>
+        </div>
+      </form>
+
+      <!-- Protocol Footer Note -->
+      <div class="chat-footer-protocol">
+        <p>🔒 All parlor transcripts are recorded in the Sovereign Ledger under strict confidentiality. For urgent diplomatic matters, ring <strong>+1 (800) 555-SWAROOP</strong>.</p>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Master Footer -->
+  <footer class="master-footer">
+    <div class="footer-bottom">
+      <p>© MMXXVI SWAROOP.inc Private Limited. Concierge Parlor Governed by Diplomatic Protocol.</p>
+    </div>
+  </footer>
+
+  <!-- Master JavaScript -->
+  <script src="../js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SWAROOP.inc | Heritage Gateway & Region Selection</title>
+
+  <!-- Google Fonts: Old Money Serifs & Classic Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Playfair+Display:ital,wght@0,600;0,800;1,400&display=swap" rel="stylesheet">
+
+  <!-- Single Master CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="gateway-body">
+
+  <div class="gateway-overlay"></div>
+
+  <!-- Gateway Main Card Container -->
+  <main class="gateway-wrapper">
+    <div class="vintage-frame">
+      <div class="corner-ornament corner-tl"></div>
+      <div class="corner-ornament corner-tr"></div>
+      <div class="corner-ornament corner-bl"></div>
+      <div class="corner-ornament corner-br"></div>
+
+      <!-- Brand Heritage Emblem -->
+      <header class="gateway-header">
+        <div class="wax-seal">
+          <span>S</span>
+        </div>
+        <p class="est-tagline">ESTABLISHED MMXXVI</p>
+        <h1 class="brand-title">SWAROOP<span>.inc</span></h1>
+        <div class="divider-ornament">
+          <span class="diamond">◆</span>
+        </div>
+        <p class="sub-heading">Purveyors of Timeless Luxury & Heritage Living</p>
+      </header>
+
+      <!-- Region & Language Preference Form -->
+      <form id="regionForm" class="vintage-form">
+        
+        <p class="instruction-text">
+          Select your sovereign territory and preferred dialect to harmonize currencies, bespoke duties, and locale.
+        </p>
+
+        <!-- Country / Region Select (with Currency metadata) -->
+        <div class="form-group">
+          <label for="countrySelect">Territory & Currency</label>
+          <div class="select-wrapper">
+            <select id="countrySelect" required>
+              <option value="" disabled selected>— Choose your sovereign territory —</option>
+              <option value="US" data-currency="USD" data-symbol="$" data-rate="1.0">United States (USD $)</option>
+              <option value="UK" data-currency="GBP" data-symbol="£" data-rate="0.79">United Kingdom (GBP £)</option>
+              <option value="IN" data-currency="INR" data-symbol="₹" data-rate="83.5">India (INR ₹)</option>
+              <option value="EU" data-currency="EUR" data-symbol="€" data-rate="0.92">European Union (EUR €)</option>
+              <option value="JP" data-currency="JPY" data-symbol="¥" data-rate="155.0">Japan (JPY ¥)</option>
+              <option value="AE" data-currency="AED" data-symbol="AED " data-rate="3.67">United Arab Emirates (AED)</option>
+              <option value="CH" data-currency="CHF" data-symbol="CHF " data-rate="0.90">Switzerland (CHF)</option>
+              <option value="CA" data-currency="CAD" data-symbol="CA$ " data-rate="1.36">Canada (CAD $)</option>
+              <option value="AU" data-currency="AUD" data-symbol="AU$ " data-rate="1.52">Australia (AUD $)</option>
+              <option value="SG" data-currency="SGD" data-symbol="SG$ " data-rate="1.35">Singapore (SGD $)</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Language Select -->
+        <div class="form-group">
+          <label for="languageSelect">Preferred Language</label>
+          <div class="select-wrapper">
+            <select id="languageSelect" required>
+              <option value="en" selected>English (Heritage Edition)</option>
+              <option value="fr">Français (French)</option>
+              <option value="de">Deutsch (German)</option>
+              <option value="it">Italiano (Italian)</option>
+              <option value="es">Español (Spanish)</option>
+              <option value="hi">हिन्दी (Hindi)</option>
+              <option value="ja">日本語 (Japanese)</option>
+              <option value="ar">العربية (Arabic)</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Submit & Proceed Button -->
+        <div class="form-actions">
+          <button type="submit" class="btn-retro-gold">
+            <span>Enter The Emporium</span>
+            <svg class="arrow-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </button>
+        </div>
+
+      </form>
+
+      <!-- Vintage Footer Note -->
+      <footer class="gateway-footer">
+        <p>Private Client Concierge & Helpline: <strong>+1 (800) 555-SWAROOP</strong></p>
+        <p class="heritage-rights">© MMXXVI SWAROOP.inc Private Limited. All Global Rights Reserved.</p>
+      </footer>
+
+    </div>
+  </main>
+
+  <!-- Single Master JS -->
+  <script src="js/script.js"></script>
+</body>
+</html>

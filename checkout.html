@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SWAROOP.inc | Acquisition Settlement & Dispatch</title>
+
+  <!-- Google Fonts: Old Money Serifs & Classic Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Playfair+Display:ital,wght@0,600;0,800;1,400&display=swap" rel="stylesheet">
+
+  <!-- Master CSS (Root reference ../css/style.css) -->
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body class="heritage-body">
+
+  <!-- Announcement Bar -->
+  <div class="vintage-announcement-bar">
+    <p>🛡️ <em>Encrypted Sovereign Protocol</em> &nbsp;•&nbsp; 256-bit Cipher Settlement & Insured Diplomatic Transit</p>
+  </div>
+
+  <!-- Global Header -->
+  <header class="master-header">
+    <div class="header-top-row">
+      <div class="locale-pill" onclick="window.location.href='../index.html'" title="Alter territory">
+        <span class="globe-icon">🌐</span>
+        <span id="displayCountry">Sovereign State: US</span> | 
+        <strong id="displayCurrency">USD ($)</strong>
+      </div>
+
+      <div class="brand-crest">
+        <a href="../home.html" class="brand-link">
+          <span class="monogram">S</span>
+          <h1 class="nav-brand-title">SWAROOP<span>.inc</span></h1>
+        </a>
+      </div>
+
+      <div class="header-utilities">
+        <a href="account.html" class="util-link" title="Client Dossier">
+          <span class="util-icon">👤</span>
+          <span class="util-text">Dossier</span>
+        </a>
+        <a href="cart.html" class="util-link cart-pill" title="Shopping Cart">
+          <span class="util-icon">💼</span>
+          <span class="util-text">Trunk (<span id="cartCount">0</span>)</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="master-nav">
+      <ul class="nav-links">
+        <li><a href="../home.html">Home Salon</a></li>
+        <li><a href="../catalog/categories.html">All Categories</a></li>
+        <li><a href="../catalog/mobiles.html">Bespoke Mobiles</a></li>
+        <li><a href="../catalog/electronics.html">Vintage Electronics</a></li>
+        <li><a href="../catalog/clothes.html">Attire</a></li>
+        <li><a href="../catalog/footwear.html">Footwear</a></li>
+        <li><a href="account.html">Client Dossier</a></li>
+        <li><a href="../support/contact.html">Concierge Desk</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Checkout Container -->
+  <main class="section-container checkout-container">
+
+    <div class="section-heading-wrap">
+      <span class="vintage-badge">PROTOCOL OF SETTLEMENT</span>
+      <h2 class="section-title">Finalize Commission & Dispatch</h2>
+      <div class="divider-ornament"><span class="diamond">◆</span></div>
+      <p class="section-subtitle">Confirm estate coordinates and tender payment to seal this consignment</p>
+    </div>
+
+    <form id="checkoutForm" class="checkout-layout-grid" onsubmit="handleCheckout(event)">
+      
+      <!-- Left Column: Delivery & Payment Details -->
+      <section class="checkout-form-column">
+
+        <!-- 1. Destination Estate -->
+        <div class="vintage-frame checkout-block">
+          <div class="corner-ornament corner-tl"></div>
+          <div class="corner-ornament corner-tr"></div>
+          <div class="corner-ornament corner-bl"></div>
+          <div class="corner-ornament corner-br"></div>
+
+          <h3 class="checkout-block-title">
+            <span class="block-step">I.</span> Destination Estate & Recipient
+          </h3>
+          <p class="block-desc">Enter the estate or town address where the physical trunk will be received.</p>
+
+          <div class="form-row">
+            <div class="form-group flex-1">
+              <label for="shipHonorific">Honorific</label>
+              <div class="select-wrapper">
+                <select id="shipHonorific">
+                  <option value="Lord">Lord</option>
+                  <option value="Lady">Lady</option>
+                  <option value="Sir">Sir</option>
+                  <option value="Mr." selected>Mr.</option>
+                  <option value="Mrs.">Mrs.</option>
+                  <option value="Dr.">Dr.</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group flex-3">
+              <label for="shipFullName">Full Recipient Name</label>
+              <input type="text" id="shipFullName" class="vintage-input" placeholder="e.g. Lord Sterling Montgomery" required />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="shipStreet">Estate Address & Street Details</label>
+            <input type="text" id="shipStreet" class="vintage-input" placeholder="e.g. 44 Kensington Palace Gardens, North Wing" required />
+          </div>
+
+          <div class="form-row">
+            <div class="form-group flex-1">
+              <label for="shipCity">City / Township</label>
+              <input type="text" id="shipCity" class="vintage-input" placeholder="e.g. London" required />
+            </div>
+            <div class="form-group flex-1">
+              <label for="shipPostal">Postal / ZIP Zone</label>
+              <input type="text" id="shipPostal" class="vintage-input" placeholder="e.g. W8 4QO" required />
+            </div>
+            <div class="form-group flex-1">
+              <label for="shipCountry">Sovereignty</label>
+              <input type="text" id="shipCountry" class="vintage-input" value="United Kingdom" required />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group flex-1">
+              <label for="shipPhone">Helpline for Courier Driver</label>
+              <input type="tel" id="shipPhone" class="vintage-input" placeholder="+1 (555) 019-2834" required />
+            </div>
+            <div class="form-group flex-1">
+              <label for="shipInstructions">Special Instructions for Gate Guard</label>
+              <input type="text" id="shipInstructions" class="vintage-input" placeholder="Leave with Estate Steward" />
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Courier Selection -->
+        <div class="vintage-frame checkout-block">
+          <div class="corner-ornament corner-tl"></div>
+          <div class="corner-ornament corner-tr"></div>
+          <div class="corner-ornament corner-bl"></div>
+          <div class="corner-ornament corner-br"></div>
+
+          <h3 class="checkout-block-title">
+            <span class="block-step">II.</span> Dispatch Mode & Security
+          </h3>
+
+          <div class="delivery-options-group">
+            <label class="delivery-radio-card">
+              <input type="radio" name="deliveryMethod" value="diplomatic" checked />
+              <div class="radio-content">
+                <div class="radio-header">
+                  <strong>Diplomatic Pouch Express</strong>
+                  <span class="font-italic">Complimentary</span>
+                </div>
+                <p>Armed private carrier with wax-sealed cedar case. Delivery in 2-4 business days.</p>
+              </div>
+            </label>
+
+            <label class="delivery-radio-card">
+              <input type="radio" name="deliveryMethod" value="overnight" />
+              <div class="radio-content">
+                <div class="radio-header">
+                  <strong>Royal Chartered Air Freight</strong>
+                  <span class="price-val" data-base-price="75">+$75.00</span>
+                </div>
+                <p>Immediate departure via private air freighter. Next business day arrival.</p>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <!-- 3. Payment Method -->
+        <div class="vintage-frame checkout-block">
+          <div class="corner-ornament corner-tl"></div>
+          <div class="corner-ornament corner-tr"></div>
+          <div class="corner-ornament corner-bl"></div>
+          <div class="corner-ornament corner-br"></div>
+
+          <h3 class="checkout-block-title">
+            <span class="block-step">III.</span> Sovereign Remittance (Payment)
+          </h3>
+
+          <div class="payment-tabs-header">
+            <label class="custom-radio">
+              <input type="radio" name="paymentType" value="card" checked onchange="togglePaymentFields('card')" />
+              <span class="radio-mark"></span>
+              <span class="payment-method-name">Black / Sovereign Card</span>
+            </label>
+            <label class="custom-radio">
+              <input type="radio" name="paymentType" value="wire" onchange="togglePaymentFields('wire')" />
+              <span class="radio-mark"></span>
+              <span class="payment-method-name">Bank Wire Transfer</span>
+            </label>
+            <label class="custom-radio">
+              <input type="radio" name="paymentType" value="cod" onchange="togglePaymentFields('cod')" />
+              <span class="radio-mark"></span>
+              <span class="payment-method-name">Vault Cash on Handover</span>
+            </label>
+          </div>
+
+          <!-- Card Form -->
+          <div id="cardPaymentBox" class="payment-form-box">
+            <div class="form-group">
+              <label for="cardNumber">Card Inscription Number</label>
+              <div class="input-wrapper">
+                <span class="input-icon">💳</span>
+                <input type="text" id="cardNumber" class="vintage-input" placeholder="4000 1234 5678 9010" maxlength="19" required />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group flex-1">
+                <label for="cardExpiry">Expiry Date</label>
+                <input type="text" id="cardExpiry" class="vintage-input" placeholder="MM/YY" maxlength="5" required />
+              </div>
+              <div class="form-group flex-1">
+                <label for="cardCvc">Security Cipher (CVC)</label>
+                <input type="password" id="cardCvc" class="vintage-input" placeholder="•••" maxlength="4" required />
+              </div>
+              <div class="form-group flex-2">
+                <label for="cardHolder">Name on Card</label>
+                <input type="text" id="cardHolder" class="vintage-input" placeholder="STERLING MONTGOMERY" required />
+              </div>
+            </div>
+          </div>
+
+          <!-- Wire Instructions -->
+          <div id="wirePaymentBox" class="payment-form-box" style="display: none;">
+            <div class="wire-instructions-card">
+              <p>Kindly transmit the total sum to our Central Swiss Clearing Account:</p>
+              <ul class="wire-details-list">
+                <li><strong>Bank:</strong> Banque de Patrimoine Privé, Geneva</li>
+                <li><strong>IBAN:</strong> CH93 0000 0000 8942 1092 8</li>
+                <li><strong>BIC/SWIFT:</strong> SWARGEN1XXX</li>
+                <li><strong>Beneficiary:</strong> SWAROOP.inc Private Holdings</li>
+              </ul>
+              <p class="wire-note">Your consignment will dispatch upon clearance confirmation by our chief auditor.</p>
+            </div>
+          </div>
+
+          <!-- Cash on Handover -->
+          <div id="codPaymentBox" class="payment-form-box" style="display: none;">
+            <p class="cod-note">
+              A bonded courier will arrive at your estate with the physical trunk. Tender the exact agreed sum in the designated sovereign currency upon signature.
+            </p>
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- Right Column: Final Manifest Summary -->
+      <aside class="checkout-summary-column">
+        <div class="vintage-frame summary-card sticky-card">
+          <div class="corner-ornament corner-tl"></div>
+          <div class="corner-ornament corner-tr"></div>
+          <div class="corner-ornament corner-bl"></div>
+          <div class="corner-ornament corner-br"></div>
+
+          <h3 class="summary-title">Acquisition Ledger</h3>
+          <div class="divider-ornament"><span class="diamond">◆</span></div>
+
+          <!-- Itemized list preview -->
+          <div class="checkout-manifest-preview" id="checkoutManifestList">
+            <div class="mini-item-row">
+              <span>Monarch Gold Titanium Phone × 1</span>
+              <strong class="price-val" data-base-price="960">$960.00</strong>
+            </div>
+          </div>
+
+          <hr class="vintage-divider" />
+
+          <!-- Financial Recap -->
+          <div class="ledger-row">
+            <span>Subtotal</span>
+            <span id="checkoutSubtotal" class="price-val" data-base-price="960">$960.00</span>
+          </div>
+
+          <div class="ledger-row">
+            <span>Privilege Courtesy</span>
+            <span id="checkoutDiscount" class="price-val font-gold" data-base-price="0">-$0.00</span>
+          </div>
+
+          <div class="ledger-row">
+            <span>Diplomatic Courier</span>
+            <span id="checkoutShipping" class="font-italic">Complimentary</span>
+          </div>
+
+          <div class="ledger-row">
+            <span>Sovereign Duties (5%)</span>
+            <span id="checkoutDuty" class="price-val" data-base-price="48">$48.00</span>
+          </div>
+
+          <hr class="vintage-divider" />
+
+          <div class="ledger-row total-row">
+            <strong>Total Commission</strong>
+            <strong id="checkoutGrandTotal" class="price-val grand-price" data-base-price="1008">$1,008.00</strong>
+          </div>
+
+          <div class="summary-actions">
+            <button type="submit" class="btn-retro-gold btn-full">
+              <span>Affix Seal & Confirm Order</span>
+              <svg class="arrow-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </button>
+          </div>
+
+          <div class="summary-guarantee">
+            <p>🗝️ All commissions are private, cataloged in the SWAROOP Registry, and protected under international diplomatic covenants.</p>
+          </div>
+
+        </div>
+      </aside>
+
+    </form>
+
+  </main>
+
+  <!-- Master Footer -->
+  <footer class="master-footer">
+    <div class="footer-bottom">
+      <p>© MMXXVI SWAROOP.inc Private Limited. Settlement Services Verified by Swiss Sovereign Protocol.</p>
+    </div>
+  </footer>
+
+  <!-- Master JavaScript -->
+  <script src="../js/script.js"></script>
+</body>
+</html>

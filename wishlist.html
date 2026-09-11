@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SWAROOP.inc | Curated Desiderata & Saved Archives</title>
+
+  <!-- Google Fonts: Old Money Serifs & Classic Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Playfair+Display:ital,wght@0,600;0,800;1,400&display=swap" rel="stylesheet">
+
+  <!-- Master CSS (Root reference ../css/style.css) -->
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body class="heritage-body">
+
+  <!-- Announcement Bar -->
+  <div class="vintage-announcement-bar">
+    <p>⚜️ <em>Private Curated Desiderata</em> &nbsp;•&nbsp; Vault Reserved for 30 Days Prior to Atelier Relinquishment</p>
+  </div>
+
+  <!-- Global Header -->
+  <header class="master-header">
+    <div class="header-top-row">
+      <div class="locale-pill" onclick="window.location.href='../index.html'" title="Alter sovereignty & currency">
+        <span class="globe-icon">🌐</span>
+        <span id="displayCountry">Sovereign State: US</span> | 
+        <strong id="displayCurrency">USD ($)</strong>
+      </div>
+
+      <div class="brand-crest">
+        <a href="../home.html" class="brand-link">
+          <span class="monogram">S</span>
+          <h1 class="nav-brand-title">SWAROOP<span>.inc</span></h1>
+        </a>
+      </div>
+
+      <div class="header-utilities">
+        <a href="account.html" class="util-link" title="Client Dossier">
+          <span class="util-icon">👤</span>
+          <span class="util-text">Dossier</span>
+        </a>
+        <a href="wishlist.html" class="util-link active-util" title="Wishlist">
+          <span class="util-icon">⚜️</span>
+          <span class="util-text">Saved (<span id="wishlistCount">0</span>)</span>
+        </a>
+        <a href="cart.html" class="util-link cart-pill" title="Shopping Cart">
+          <span class="util-icon">💼</span>
+          <span class="util-text">Cart (<span id="cartCount">0</span>)</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="master-nav">
+      <ul class="nav-links">
+        <li><a href="../home.html">Home Salon</a></li>
+        <li><a href="../catalog/categories.html">All Categories</a></li>
+        <li><a href="../catalog/mobiles.html">Bespoke Mobiles</a></li>
+        <li><a href="../catalog/electronics.html">Vintage Electronics</a></li>
+        <li><a href="../catalog/clothes.html">Attire</a></li>
+        <li><a href="../catalog/footwear.html">Footwear</a></li>
+        <li><a href="account.html">Client Dossier</a></li>
+        <li><a href="../support/contact.html">Concierge Desk</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Wishlist Chamber Container -->
+  <main class="section-container wishlist-page-container">
+    
+    <!-- Heading Banner -->
+    <div class="section-heading-wrap">
+      <span class="vintage-badge">RESERVED DESIDERATA</span>
+      <h2 class="section-title">Your Private Collection Vault</h2>
+      <div class="divider-ornament"><span class="diamond">◆</span></div>
+      <p class="section-subtitle">Articles earmarked for future acquisition into your sovereign estate</p>
+    </div>
+
+    <!-- Action Toolbar (Bulk transfer / count) -->
+    <div class="wishlist-toolbar">
+      <div class="toolbar-status">
+        <span class="status-icon">📜</span>
+        <span id="wishlistTotalItemsText">Curated Masterworks on File: <strong>0</strong></span>
+      </div>
+      <div class="toolbar-actions">
+        <button type="button" class="btn-small-gold" onclick="transferAllWishlistToCart()">
+          <span>Transfer All to Acquisition Trunk</span> 💼
+        </button>
+        <button type="button" class="btn-text-link font-danger" onclick="clearFullWishlist()">
+          Empty Entire Vault
+        </button>
+      </div>
+    </div>
+
+    <!-- Empty Vault State -->
+    <div id="emptyWishlistMessage" class="vintage-frame empty-state-box" style="display: none;">
+      <div class="empty-icon">⚜️</div>
+      <h3>Your Vault Holds No Earmarked Treasures</h3>
+      <p>You have not yet designated any heirlooms or tailoring pieces to your personal archive.</p>
+      <a href="../catalog/categories.html" class="btn-retro-gold">Explore The Grand Departments</a>
+    </div>
+
+    <!-- Dynamic Wishlist Grid (Injected and managed via script.js) -->
+    <div class="product-grid wishlist-grid" id="wishlistGridContainer">
+      
+      <!-- Fallback Item 1: Dynamic JS replaces or synchronizes this on load -->
+      <article class="product-card wishlist-card" data-id="P102">
+        <button type="button" class="btn-card-dismiss" onclick="handleRemoveFromWishlist('P102')" title="Relinquish from vault">✕</button>
+        <div class="product-img-box">
+          <span class="mock-item-art">📻</span>
+        </div>
+        <div class="product-details">
+          <span class="product-category">Acoustics & Valves</span>
+          <h4 class="product-name">Bespoke Walnut Valve Amplifier</h4>
+          <p class="product-desc">Hand-wound audio transformers encased in polished solid walnut.</p>
+          <div class="price-wrap">
+            <span class="current-price" data-base-price="720">$720</span>
+          </div>
+          <div class="card-btn-group">
+            <button type="button" class="btn-small-gold btn-full" onclick="handleWishlistMoveToCart('P102')">
+              Transfer to Trunk 💼
+            </button>
+            <a href="../catalog/product-details.html?id=P102" class="btn-small-outline">Inspect</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Fallback Item 2 -->
+      <article class="product-card wishlist-card" data-id="P103">
+        <button type="button" class="btn-card-dismiss" onclick="handleRemoveFromWishlist('P103')" title="Relinquish from vault">✕</button>
+        <div class="product-img-box">
+          <span class="mock-item-art">🧥</span>
+        </div>
+        <div class="product-details">
+          <span class="product-category">Apparel</span>
+          <h4 class="product-name">Double-Breasted Cashmere Overcoat</h4>
+          <p class="product-desc">100% Mongolian combed cashmere with hand-carved horn buttons.</p>
+          <div class="price-wrap">
+            <span class="current-price" data-base-price="490">$490</span>
+          </div>
+          <div class="card-btn-group">
+            <button type="button" class="btn-small-gold btn-full" onclick="handleWishlistMoveToCart('P103')">
+              Transfer to Trunk 💼
+            </button>
+            <a href="../catalog/product-details.html?id=P103" class="btn-small-outline">Inspect</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- Bottom Boutique Navigation Guidance -->
+    <div class="wishlist-footer-nav">
+      <a href="../catalog/categories.html" class="btn-retro-outline">&larr; Return to The Catalog</a>
+      <a href="cart.html" class="btn-retro-gold">Inspect Shopping Trunk &rarr;</a>
+    </div>
+
+  </main>
+
+  <!-- Master Footer -->
+  <footer class="master-footer">
+    <div class="footer-bottom">
+      <p>© MMXXVI SWAROOP.inc Private Limited. Curatorial Records Maintained with Discretion.</p>
+    </div>
+  </footer>
+
+  <!-- Master JavaScript -->
+  <script src="../js/script.js"></script>
+</body>
+</html>

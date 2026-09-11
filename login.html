@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SWAROOP.inc | Private Member Authentication</title>
+
+  <!-- Google Fonts: Old Money Serifs & Classic Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Playfair+Display:ital,wght@0,600;0,800;1,400&display=swap" rel="stylesheet">
+
+  <!-- Master CSS (Root reference ../css/style.css) -->
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body class="gateway-body">
+
+  <div class="gateway-overlay"></div>
+
+  <!-- Top Navigation Pill to Return Home -->
+  <div class="auth-top-nav">
+    <a href="../home.html" class="heritage-back-link">
+      <span>&larr; Return to Grand Salon</span>
+    </a>
+  </div>
+
+  <!-- Authentication Main Frame -->
+  <main class="gateway-wrapper">
+    <div class="vintage-frame auth-frame">
+      <div class="corner-ornament corner-tl"></div>
+      <div class="corner-ornament corner-tr"></div>
+      <div class="corner-ornament corner-bl"></div>
+      <div class="corner-ornament corner-br"></div>
+
+      <!-- Brand Monogram & Heading -->
+      <header class="gateway-header">
+        <div class="wax-seal">
+          <span>S</span>
+        </div>
+        <p class="est-tagline">MEMBER CONCIERGE</p>
+        <h1 class="brand-title">Client Access</h1>
+        <div class="divider-ornament">
+          <span class="diamond">◆</span>
+        </div>
+        <p class="sub-heading">Provide your sovereign credentials to enter your private dossier.</p>
+      </header>
+
+      <!-- Feedback / Notification Alert Box -->
+      <div id="authAlert" class="auth-alert" style="display: none;"></div>
+
+      <!-- Login Form -->
+      <form id="loginForm" class="vintage-form" onsubmit="handleLogin(event)">
+        
+        <!-- Email Field -->
+        <div class="form-group">
+          <label for="loginEmail">Registered Correspondence (Email)</label>
+          <div class="input-wrapper">
+            <span class="input-icon">✉️</span>
+            <input 
+              type="email" 
+              id="loginEmail" 
+              name="email" 
+              class="vintage-input" 
+              placeholder="e.g. lord.swaroop@estate.com" 
+              required 
+            />
+          </div>
+        </div>
+
+        <!-- Password Field -->
+        <div class="form-group">
+          <div class="label-split">
+            <label for="loginPassword">Cipher / Secret Key</label>
+            <a href="javascript:void(0)" onclick="alert('Kindly communicate with the Head Concierge at +1 (800) 555-SWAROOP to reset your cipher.')" class="form-sub-link">Forgot Key?</a>
+          </div>
+          <div class="input-wrapper">
+            <span class="input-icon">🗝️</span>
+            <input 
+              type="password" 
+              id="loginPassword" 
+              name="password" 
+              class="vintage-input" 
+              placeholder="Enter your confidential cipher" 
+              required 
+            />
+          </div>
+        </div>
+
+        <!-- Utilities: Remember Me -->
+        <div class="form-auxiliary">
+          <label class="custom-checkbox">
+            <input type="checkbox" id="rememberMe" checked />
+            <span class="checkmark"></span>
+            <span class="checkbox-label">Retain credentials on this workstation</span>
+          </label>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="form-actions">
+          <button type="submit" class="btn-retro-gold btn-full">
+            <span>Unlock Private Salon</span>
+            <svg class="arrow-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Switch to Registration -->
+        <div class="auth-switch">
+          <p>Not yet inducted into the Society?</p>
+          <a href="register.html" class="btn-retro-outline btn-full">Petition for Membership (Register)</a>
+        </div>
+
+      </form>
+
+      <!-- Helplines & Security Footer -->
+      <footer class="gateway-footer">
+        <p>Direct Inquiries & Telegram: <strong>concierge@swaroop.inc</strong></p>
+        <p class="heritage-rights">Protected by 256-bit Sovereign Cryptography.</p>
+      </footer>
+
+    </div>
+  </main>
+
+  <!-- Master JavaScript (Root reference ../js/script.js) -->
+  <script src="../js/script.js"></script>
+</body>
+</html>

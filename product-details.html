@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SWAROOP.inc | Masterwork Inspection & Commission</title>
+
+  <!-- Google Fonts: Old Money Serifs & Classic Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Playfair+Display:ital,wght@0,600;0,800;1,400&display=swap" rel="stylesheet">
+
+  <!-- Master CSS (Root reference ../css/style.css) -->
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body class="heritage-body">
+
+  <!-- Announcement Bar -->
+  <div class="vintage-announcement-bar">
+    <p>⚜️ <em>Curatorial Inspection</em> &nbsp;•&nbsp; Each Piece Numbered, Sealed & Verified by Chief Assayer</p>
+  </div>
+
+  <!-- Global Header -->
+  <header class="master-header">
+    <div class="header-top-row">
+      <div class="locale-pill" onclick="window.location.href='../index.html'" title="Alter sovereignty & currency">
+        <span class="globe-icon">🌐</span>
+        <span id="displayCountry">Sovereign State: US</span> | 
+        <strong id="displayCurrency">USD ($)</strong>
+      </div>
+
+      <div class="brand-crest">
+        <a href="../home.html" class="brand-link">
+          <span class="monogram">S</span>
+          <h1 class="nav-brand-title">SWAROOP<span>.inc</span></h1>
+        </a>
+      </div>
+
+      <div class="header-utilities">
+        <a href="../user/account.html" class="util-link" title="Client Dossier">
+          <span class="util-icon">👤</span>
+          <span class="util-text">Dossier</span>
+        </a>
+        <a href="../user/wishlist.html" class="util-link" title="Wishlist">
+          <span class="util-icon">⚜️</span>
+          <span class="util-text">Saved (<span id="wishlistCount">0</span>)</span>
+        </a>
+        <a href="../user/cart.html" class="util-link cart-pill" title="Shopping Cart">
+          <span class="util-icon">💼</span>
+          <span class="util-text">Trunk (<span id="cartCount">0</span>)</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="master-nav">
+      <ul class="nav-links">
+        <li><a href="../home.html">Home Salon</a></li>
+        <li><a href="categories.html">All Categories</a></li>
+        <li><a href="mobiles.html">Bespoke Mobiles</a></li>
+        <li><a href="electronics.html">Vintage Electronics</a></li>
+        <li><a href="clothes.html">Attire</a></li>
+        <li><a href="footwear.html">Footwear</a></li>
+        <li><a href="../user/account.html">Client Dossier</a></li>
+        <li><a href="../support/contact.html">Concierge Desk</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Product Details Container -->
+  <main class="section-container product-detail-container">
+
+    <!-- Breadcrumbs (Dynamically populated) -->
+    <nav class="vintage-breadcrumbs" id="detailBreadcrumbs">
+      <a href="../home.html">Emporium</a>
+      <span class="sep">/</span>
+      <a href="categories.html">Departments</a>
+      <span class="sep">/</span>
+      <span class="current" id="crumbProductName">Inspection View</span>
+    </nav>
+
+    <!-- Inspection Hero Section: Gallery + Purchase Matrix -->
+    <section class="vintage-frame product-inspection-card">
+      <div class="corner-ornament corner-tl"></div>
+      <div class="corner-ornament corner-tr"></div>
+      <div class="corner-ornament corner-bl"></div>
+      <div class="corner-ornament corner-br"></div>
+
+      <div class="detail-columns-wrapper">
+
+        <!-- Left Column: Visual Gallery & Hallmarks -->
+        <div class="detail-gallery-column">
+          <div class="main-viewport-frame">
+            <span class="provenance-seal">CERTIFIED MMXXVI</span>
+            <div class="viewport-display" id="mainImageDisplay">
+              <span class="hero-item-art" id="detailVisualIcon">📱</span>
+            </div>
+          </div>
+
+          <!-- Gallery Thumbnails -->
+          <div class="gallery-thumbs-row">
+            <button type="button" class="thumb-frame active" onclick="switchDetailPhoto(0)">
+              <span id="thumbIcon0">📱</span>
+            </button>
+            <button type="button" class="thumb-frame" onclick="switchDetailPhoto(1)">
+              <span id="thumbIcon1">🔍</span>
+            </button>
+            <button type="button" class="thumb-frame" onclick="switchDetailPhoto(2)">
+              <span id="thumbIcon2">🏛️</span>
+            </button>
+          </div>
+
+          <div class="vault-guarantee-pill">
+            <span>🛡️ Vault Warrant: Lifetime Artisan Reconditioning Guarantee</span>
+          </div>
+        </div>
+
+        <!-- Right Column: Purchasing Dossier -->
+        <div class="detail-info-column">
+          
+          <div class="item-department-tag" id="detailDeptBadge">Department I • Telephony</div>
+          <h2 class="detail-title" id="detailTitle">Monarch Gold Titanium Phone</h2>
+          
+          <div class="curator-rating-row">
+            <span class="star-rating">★★★★★</span>
+            <span class="review-count">94 Estate Inscriptions</span>
+            <span class="stock-pill in-stock">Atelier Vault Ready</span>
+          </div>
+
+          <div class="detail-price-box">
+            <span class="detail-original-price" id="detailOriginalPrice" data-base-price="1200">$1,200</span>
+            <span class="detail-current-price" id="detailCurrentPrice" data-base-price="960">$960</span>
+            <span class="currency-tag">(Valued in sovereign currency)</span>
+          </div>
+
+          <p class="detail-summary-text" id="detailSummary">
+            Engineered with a solid Grade 5 titanium chassis, fluted 24K gold side rails, and custom Swiss micro-mechanical internal gearing. Backed with vegetable-tanned French calfskin and an edge-to-edge sapphire crystal shield.
+          </p>
+
+          <hr class="vintage-divider" />
+
+          <!-- Selection Attributes (Quantity & Options) -->
+          <div class="detail-options-group">
+            
+            <div class="option-row">
+              <label for="detailQuantity">Units Commissioned:</label>
+              <div class="quantity-controller">
+                <button type="button" class="qty-btn" onclick="adjustDetailQty(-1)">−</button>
+                <span class="qty-number" id="detailQtyVal">1</span>
+                <button type="button" class="qty-btn" onclick="adjustDetailQty(1)">+</button>
+              </div>
+            </div>
+
+            <div class="option-row">
+              <label>Packaging Casket:</label>
+              <div class="bespoke-casket-select">
+                <label class="custom-radio">
+                  <input type="radio" name="casketType" value="cedar" checked />
+                  <span class="radio-mark"></span>
+                  <span>Hand-Carved Cedar Chest</span>
+                </label>
+                <label class="custom-radio">
+                  <input type="radio" name="casketType" value="leather" />
+                  <span class="radio-mark"></span>
+                  <span>Moroccan Saddle Leather Case</span>
+                </label>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Triple Primary Action Matrix: Add to Cart / Buy Now / Wishlist -->
+          <div class="detail-action-matrix">
+            <div class="primary-btn-row">
+              <!-- Add to Cart -->
+              <button type="button" class="btn-retro-outline flex-1" id="detailAddToCartBtn" onclick="triggerDetailAddToCart()">
+                <span>Add to Acquisition Trunk</span> 💼
+              </button>
+              <!-- Buy Now -->
+              <button type="button" class="btn-retro-gold flex-1" id="detailBuyNowBtn" onclick="triggerDetailBuyNow()">
+                <span>Commission Immediately (Buy Now)</span> &rarr;
+              </button>
+            </div>
+
+            <!-- Add to Wishlist -->
+            <button type="button" class="btn-retro-subtle btn-full" id="detailWishlistBtn" onclick="triggerDetailAddToWishlist()">
+              <span class="icon">⚜️</span>
+              <span>Reserve in Private Desiderata (Wishlist)</span>
+            </button>
+          </div>
+
+          <!-- Security & Courier Seals -->
+          <div class="detail-perks-list">
+            <div class="perk-item">
+              <span class="perk-icon">🗝️</span>
+              <span>Personal diplomatic escort to your estate gate.</span>
+            </div>
+            <div class="perk-item">
+              <span class="perk-icon">📜</span>
+              <span>Signed archival parchment certificate of authenticity included.</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- Detailed Tabs Section: Provenance / Specs / Escort -->
+    <section class="vintage-frame product-tabs-frame" style="margin-top: 3rem;">
+      <div class="tab-headers-row">
+        <button type="button" class="detail-tab-btn active" onclick="switchDetailSpecTab('provenanceTab')">
+          Provenance & Heritage
+        </button>
+        <button type="button" class="detail-tab-btn" onclick="switchDetailSpecTab('specsTab')">
+          Technical Specifications
+        </button>
+        <button type="button" class="detail-tab-btn" onclick="switchDetailSpecTab('escortTab')">
+          Diplomatic Courier & Protocol
+        </button>
+      </div>
+
+      <div class="detail-tab-panes">
+        <!-- Tab 1: Provenance -->
+        <div id="provenanceTab" class="detail-pane active">
+          <h3>The Lineage of the Craft</h3>
+          <p id="detailProvenanceText">
+            Every component is shaped without reliance on mass fabrication lines. Hand-finished by artisans trained in the clockmaking valleys of Jura and Northamptonshire cordwainer guilds, this acquisition reflects heirloom permanence.
+          </p>
+        </div>
+
+        <!-- Tab 2: Specs -->
+        <div id="specsTab" class="detail-pane" style="display: none;">
+          <h3>Detailed Ledger of Materials</h3>
+          <table class="vintage-spec-table" id="detailSpecTable">
+            <tbody>
+              <tr>
+                <th>Origin Atelier</th>
+                <td>Geneva & London Workshops</td>
+              </tr>
+              <tr>
+                <th>Primary Chassis</th>
+                <td>Grade 5 Aerospace Titanium with 24K Gold Inlay</td>
+              </tr>
+              <tr>
+                <th>Crystal Glass</th>
+                <td>Mohs-Hardness 9 Pure Corundum Sapphire</td>
+              </tr>
+              <tr>
+                <th>Cryptography</th>
+                <td>Military-Grade Dual Hardware Enclave</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Tab 3: Escort -->
+        <div id="escortTab" class="detail-pane" style="display: none;">
+          <h3>Handover & Carriage Protocols</h3>
+          <p>
+            Consignments travel inside reinforced lockboxes under bonded custody. Upon arrival at your estate, the courier will require an ink signature and verify sovereign identification before relinquishing the keys.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Master Footer -->
+  <footer class="master-footer">
+    <div class="footer-bottom">
+      <p>© MMXXVI SWAROOP.inc Private Limited. All Acquisitions Governed by Royal Guild Standards.</p>
+    </div>
+  </footer>
+
+  <!-- Master JavaScript -->
+  <script src="../js/script.js"></script>
+</body>
+</html>

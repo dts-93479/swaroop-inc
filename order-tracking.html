@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SWAROOP.inc | Consignment Transit & Dispatch Tracking</title>
+
+  <!-- Google Fonts: Old Money Serifs & Classic Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Playfair+Display:ital,wght@0,600;0,800;1,400&display=swap" rel="stylesheet">
+
+  <!-- Master CSS (Root reference ../css/style.css) -->
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body class="heritage-body">
+
+  <!-- Top Announcement Bar -->
+  <div class="vintage-announcement-bar">
+    <p>🧭 <em>Sovereign Courier Service</em> &nbsp;•&nbsp; Monitored Under Armed Escort & Diplomatic Clearance</p>
+  </div>
+
+  <!-- Global Header -->
+  <header class="master-header">
+    <div class="header-top-row">
+      <div class="locale-pill" onclick="window.location.href='../index.html'" title="Alter territory">
+        <span class="globe-icon">🌐</span>
+        <span id="displayCountry">Sovereign State: US</span> | 
+        <strong id="displayCurrency">USD ($)</strong>
+      </div>
+
+      <div class="brand-crest">
+        <a href="../home.html" class="brand-link">
+          <span class="monogram">S</span>
+          <h1 class="nav-brand-title">SWAROOP<span>.inc</span></h1>
+        </a>
+      </div>
+
+      <div class="header-utilities">
+        <a href="account.html" class="util-link" title="Client Dossier">
+          <span class="util-icon">👤</span>
+          <span class="util-text">Dossier</span>
+        </a>
+        <a href="wishlist.html" class="util-link" title="Wishlist">
+          <span class="util-icon">⚜️</span>
+          <span class="util-text">Saved (<span id="wishlistCount">0</span>)</span>
+        </a>
+        <a href="cart.html" class="util-link cart-pill" title="Shopping Cart">
+          <span class="util-icon">💼</span>
+          <span class="util-text">Cart (<span id="cartCount">0</span>)</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="master-nav">
+      <ul class="nav-links">
+        <li><a href="../home.html">Home Salon</a></li>
+        <li><a href="../catalog/categories.html">All Categories</a></li>
+        <li><a href="../catalog/mobiles.html">Bespoke Mobiles</a></li>
+        <li><a href="../catalog/electronics.html">Vintage Electronics</a></li>
+        <li><a href="../catalog/clothes.html">Attire</a></li>
+        <li><a href="../catalog/footwear.html">Footwear</a></li>
+        <li><a href="account.html">Client Dossier</a></li>
+        <li><a href="order-tracking.html" class="active">Live Tracking</a></li>
+        <li><a href="../support/contact.html">Concierge Desk</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Tracking Chamber Main Container -->
+  <main class="section-container tracking-container">
+
+    <!-- Search / Look-Up Frame -->
+    <section class="vintage-frame tracking-search-box">
+      <div class="corner-ornament corner-tl"></div>
+      <div class="corner-ornament corner-tr"></div>
+      <div class="corner-ornament corner-bl"></div>
+      <div class="corner-ornament corner-br"></div>
+
+      <div class="section-heading-wrap">
+        <span class="vintage-badge">DIPLOMATIC POUCH & FREIGHT</span>
+        <h2 class="section-title">Consignment Waybill Inquiry</h2>
+        <div class="divider-ornament"><span class="diamond">◆</span></div>
+        <p class="section-subtitle">Enter your bespoke consignment ledger number to inspect its coordinates</p>
+      </div>
+
+      <form id="trackingForm" class="vintage-form tracking-form-inline" onsubmit="handleTrackOrder(event)">
+        <div class="tracking-input-group">
+          <span class="input-icon">📜</span>
+          <input 
+            type="text" 
+            id="orderTrackingInput" 
+            class="vintage-input" 
+            placeholder="e.g. SW-8942-MMXXVI" 
+            value="SW-8942-MMXXVI" 
+            required 
+          />
+          <button type="submit" class="btn-retro-gold">Locate Consignment</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Tracking Results Dossier Card -->
+    <section class="vintage-frame tracking-details-card" id="trackingResults">
+      
+      <!-- Consignment Metadata Header -->
+      <div class="consignment-header-row">
+        <div>
+          <span class="meta-label">Consignment Reference</span>
+          <h3 class="meta-value" id="trackOrderNumber">SW-8942-MMXXVI</h3>
+        </div>
+        <div>
+          <span class="meta-label">Carrier & Escort</span>
+          <p class="meta-value">Royal Sovereign Express (Diplomatic Flight)</p>
+        </div>
+        <div>
+          <span class="meta-label">Estimated Estate Arrival</span>
+          <p class="meta-value font-gold" id="trackArrivalDate">September 14, 2026</p>
+        </div>
+        <div>
+          <span class="meta-label">Current Disposition</span>
+          <span class="order-badge status-dispatched" id="trackStatusBadge">In Airborne Transit</span>
+        </div>
+      </div>
+
+      <hr class="vintage-divider" />
+
+      <!-- Retro Milestone Timeline -->
+      <div class="timeline-wrapper">
+        <h4 class="timeline-heading">Progress of Transit</h4>
+        
+        <div class="vintage-timeline">
+          <!-- Step 1: Completed -->
+          <div class="timeline-step completed">
+            <div class="step-indicator">
+              <span class="step-icon">⚜️</span>
+            </div>
+            <div class="step-details">
+              <h5>Consignment Sealed</h5>
+              <p class="step-time">Sep 9, 2026 • 09:30 AM</p>
+              <p class="step-note">Bespoke packaging and wax seal affixed at the Geneva Atelier.</p>
+            </div>
+          </div>
+
+          <!-- Step 2: Completed -->
+          <div class="timeline-step completed">
+            <div class="step-indicator">
+              <span class="step-icon">🏛️</span>
+            </div>
+            <div class="step-details">
+              <h5>Diplomatic Customs Clearance</h5>
+              <p class="step-time">Sep 10, 2026 • 02:15 PM</p>
+              <p class="step-note">Inspected and cleared through Sovereign Trade Port.</p>
+            </div>
+          </div>
+
+          <!-- Step 3: Active / In Progress -->
+          <div class="timeline-step active">
+            <div class="step-indicator">
+              <span class="step-icon">✈️</span>
+            </div>
+            <div class="step-details">
+              <h5>Intercontinental Flight</h5>
+              <p class="step-time">Sep 11, 2026 • 08:45 AM</p>
+              <p class="step-note">En route to Destination Hub with armed courier escort.</p>
+            </div>
+          </div>
+
+          <!-- Step 4: Pending -->
+          <div class="timeline-step pending">
+            <div class="step-indicator">
+              <span class="step-icon">🗝️</span>
+            </div>
+            <div class="step-details">
+              <h5>Estate Courier Dispatch</h5>
+              <p class="step-time">Expected Sep 13, 2026</p>
+              <p class="step-note">Private driver assigned for personal doorstep handover.</p>
+            </div>
+          </div>
+
+          <!-- Step 5: Pending -->
+          <div class="timeline-step pending">
+            <div class="step-indicator">
+              <span class="step-icon">🏡</span>
+            </div>
+            <div class="step-details">
+              <h5>Delivered to Residence</h5>
+              <p class="step-time">Pending Confirmation</p>
+              <p class="step-note">Signed receipt by authorized estate steward.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="vintage-divider" />
+
+      <!-- Consignment Manifest / Contents -->
+      <div class="consignment-manifest">
+        <h4 class="manifest-title">Dispatched Manifest Contents</h4>
+        
+        <div class="manifest-item">
+          <div class="manifest-thumb">📱</div>
+          <div class="manifest-info">
+            <h5>Monarch Gold Titanium Phone</h5>
+            <p>Specification: 24K Brushed Gold, 512GB Encrypted Solid Storage</p>
+            <span class="manifest-serial">Serial: SW-TI-99401-A</span>
+          </div>
+          <div class="manifest-qty">Qty: 1</div>
+          <div class="manifest-val">
+            <span class="price-val" data-base-price="960">$960</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Destination Address Summary -->
+      <div class="consignment-footer-note">
+        <div class="dispatch-address-summary">
+          <span class="meta-label">Designated Delivery Estate:</span>
+          <p><strong>Highland Manor</strong> — 44 Kensington Palace Gardens, London W8 4QO, United Kingdom</p>
+        </div>
+        <div class="dispatch-action-group">
+          <a href="../support/support-chat.html" class="btn-retro-outline">Query Escort Concierge</a>
+          <button class="btn-retro-gold" onclick="window.print()">Print Official Waybill</button>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Master Footer -->
+  <footer class="master-footer">
+    <div class="footer-bottom">
+      <p>© MMXXVI SWAROOP.inc Private Limited. Sovereign Courier Network.</p>
+    </div>
+  </footer>
+
+  <!-- Master JavaScript -->
+  <script src="../js/script.js"></script>
+</body>
+</html>

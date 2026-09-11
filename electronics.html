@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SWAROOP.inc | Vintage Electronics & Bespoke Acoustics</title>
+
+  <!-- Google Fonts: Old Money Serifs & Classic Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Playfair+Display:ital,wght@0,600;0,800;1,400&display=swap" rel="stylesheet">
+
+  <!-- Master CSS (Root reference ../css/style.css) -->
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body class="heritage-body">
+
+  <!-- Announcement Bar -->
+  <div class="vintage-announcement-bar">
+    <p>🎙️ <em>Department II: Vintage Electronics</em> &nbsp;•&nbsp; Vacuum Tubes, Solid Walnut Enclosures & Analog Fidelity</p>
+  </div>
+
+  <!-- Global Header -->
+  <header class="master-header">
+    <div class="header-top-row">
+      <div class="locale-pill" onclick="window.location.href='../index.html'" title="Alter sovereignty & currency">
+        <span class="globe-icon">🌐</span>
+        <span id="displayCountry">Sovereign State: US</span> | 
+        <strong id="displayCurrency">USD ($)</strong>
+      </div>
+
+      <div class="brand-crest">
+        <a href="../home.html" class="brand-link">
+          <span class="monogram">S</span>
+          <h1 class="nav-brand-title">SWAROOP<span>.inc</span></h1>
+        </a>
+      </div>
+
+      <div class="header-utilities">
+        <a href="../user/account.html" class="util-link" title="Client Dossier">
+          <span class="util-icon">👤</span>
+          <span class="util-text">Dossier</span>
+        </a>
+        <a href="../user/wishlist.html" class="util-link" title="Wishlist">
+          <span class="util-icon">⚜️</span>
+          <span class="util-text">Saved (<span id="wishlistCount">0</span>)</span>
+        </a>
+        <a href="../user/cart.html" class="util-link cart-pill" title="Shopping Cart">
+          <span class="util-icon">💼</span>
+          <span class="util-text">Trunk (<span id="cartCount">0</span>)</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="master-nav">
+      <ul class="nav-links">
+        <li><a href="../home.html">Home Salon</a></li>
+        <li><a href="categories.html">All Categories</a></li>
+        <li><a href="mobiles.html">Bespoke Mobiles</a></li>
+        <li><a href="electronics.html" class="active">Vintage Electronics</a></li>
+        <li><a href="clothes.html">Attire</a></li>
+        <li><a href="footwear.html">Footwear</a></li>
+        <li><a href="../user/account.html">Client Dossier</a></li>
+        <li><a href="../support/contact.html">Concierge Desk</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Department Container -->
+  <main class="section-container category-page-container">
+
+    <!-- Breadcrumbs -->
+    <nav class="vintage-breadcrumbs">
+      <a href="../home.html">Emporium</a>
+      <span class="sep">/</span>
+      <a href="categories.html">Departments</a>
+      <span class="sep">/</span>
+      <span class="current">Vintage Electronics</span>
+    </nav>
+
+    <!-- Department Header Banner -->
+    <div class="category-header-banner vintage-frame">
+      <div class="corner-ornament corner-tl"></div>
+      <div class="corner-ornament corner-tr"></div>
+      <div class="corner-ornament corner-bl"></div>
+      <div class="corner-ornament corner-br"></div>
+
+      <span class="dept-index-roman">DEPARTMENT II</span>
+      <h2 class="category-title">Vintage Electronics & Acoustics</h2>
+      <div class="divider-ornament"><span class="diamond">◆</span></div>
+      <p class="category-description">
+        Analog warmth meets precision mechanical engineering. Sourced from traditional sound workshops across England, Germany, and Japan, each piece features real vacuum tubes, fluted brass dials, and solid English walnut enclosures.
+      </p>
+    </div>
+
+    <!-- Filter & Sort Controls -->
+    <div class="catalog-controls-bar">
+      <div class="filter-group">
+        <label for="electronicsFilter">Acoustic Class:</label>
+        <div class="select-wrapper">
+          <select id="electronicsFilter" onchange="filterProductsByMaterial(this.value)">
+            <option value="all">All Acoustic Hardware</option>
+            <option value="valves">Vacuum Tube Amplifiers</option>
+            <option value="turntable">Direct-Drive Turntables</option>
+            <option value="mechanical">Mechanical Typing Instruments</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <label for="priceSort">Order Ledger:</label>
+        <div class="select-wrapper">
+          <select id="priceSort" onchange="sortCatalogProducts(this.value)">
+            <option value="curated">Curator's Choice</option>
+            <option value="asc">Valuation: Modest to Sovereign</option>
+            <option value="desc">Valuation: Sovereign to Modest</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product Grid -->
+    <div class="product-grid" id="electronicsProductGrid">
+
+      <!-- Product 1 -->
+      <article class="product-card" data-id="P102" data-material="valves">
+        <span class="deal-ribbon">Privilege Offer</span>
+        <div class="product-img-box">
+          <span class="mock-item-art">📻</span>
+        </div>
+        <div class="product-details">
+          <span class="product-category">Acoustics • Valve Amplification</span>
+          <h4 class="product-name">Bespoke Walnut Valve Amplifier</h4>
+          <p class="product-desc">Matched KT88 power tubes with hand-wound audio transformers and brass fittings.</p>
+          <div class="price-wrap">
+            <span class="original-price" data-base-price="850">$850</span>
+            <span class="current-price" data-base-price="720">$720</span>
+          </div>
+          <div class="card-btn-group">
+            <button class="btn-small-gold" onclick="handleAddToCart('P102')">Add to Trunk</button>
+            <button class="btn-small-icon" onclick="handleAddToWishlist('P102')" title="Add to Wishlist">⚜️</button>
+            <a href="product-details.html?id=P102" class="btn-small-outline">Inspect</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Product 2 -->
+      <article class="product-card" data-id="P108" data-material="turntable">
+        <div class="product-img-box">
+          <span class="mock-item-art">🎛️</span>
+        </div>
+        <div class="product-details">
+          <span class="product-category">Analog • Vinyl Systems</span>
+          <h4 class="product-name">Kensington Heavy Platter Turntable</h4>
+          <p class="product-desc">Machined brass flywheel platter with magnetic suspension and carbon-fiber tonearm.</p>
+          <div class="price-wrap">
+            <span class="current-price" data-base-price="1350">$1,350</span>
+          </div>
+          <div class="card-btn-group">
+            <button class="btn-small-gold" onclick="handleAddToCart('P108')">Add to Trunk</button>
+            <button class="btn-small-icon" onclick="handleAddToWishlist('P108')" title="Add to Wishlist">⚜️</button>
+            <a href="product-details.html?id=P108" class="btn-small-outline">Inspect</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Product 3 -->
+      <article class="product-card" data-id="P109" data-material="mechanical">
+        <span class="deal-ribbon">Limited Issue</span>
+        <div class="product-img-box">
+          <span class="mock-item-art">⌨️</span>
+        </div>
+        <div class="product-details">
+          <span class="product-category">Instruments • Mechanical Typing</span>
+          <h4 class="product-name">Baron Imperial Mechanical Keyboard</h4>
+          <p class="product-desc">Solid cast-brass chassis with typewriter-style circular keys and lubricated switches.</p>
+          <div class="price-wrap">
+            <span class="current-price" data-base-price="580">$580</span>
+          </div>
+          <div class="card-btn-group">
+            <button class="btn-small-gold" onclick="handleAddToCart('P109')">Add to Trunk</button>
+            <button class="btn-small-icon" onclick="handleAddToWishlist('P109')" title="Add to Wishlist">⚜️</button>
+            <a href="product-details.html?id=P109" class="btn-small-outline">Inspect</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Product 4 -->
+      <article class="product-card" data-id="P110" data-material="valves">
+        <div class="product-img-box">
+          <span class="mock-item-art">🎙️</span>
+        </div>
+        <div class="product-details">
+          <span class="product-category">Acoustics • Studio Fidelity</span>
+          <h4 class="product-name">Mayfair Ribbon Studio Transducer</h4>
+          <p class="product-desc">Bespoke vintage ribbon microphone housing an aluminum foil transducer for warm speech.</p>
+          <div class="price-wrap">
+            <span class="original-price" data-base-price="750">$750</span>
+            <span class="current-price" data-base-price="640">$640</span>
+          </div>
+          <div class="card-btn-group">
+            <button class="btn-small-gold" onclick="handleAddToCart('P110')">Add to Trunk</button>
+            <button class="btn-small-icon" onclick="handleAddToWishlist('P110')" title="Add to Wishlist">⚜️</button>
+            <a href="product-details.html?id=P110" class="btn-small-outline">Inspect</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- Concierge Commissioning Note -->
+    <section class="concierge-cta-bar" style="margin-top: 4rem;">
+      <div class="cta-inner">
+        <div class="cta-text">
+          <h3>Architectural Estate Acoustic Integration</h3>
+          <p>Our acoustic engineers travel worldwide to calibrate listening salons, hidden sound installations, and estate library soundscapes.</p>
+        </div>
+        <div class="cta-buttons">
+          <a href="../support/support-chat.html" class="btn-retro-gold">Summon Acoustic Curator</a>
+          <a href="../support/contact.html" class="btn-retro-outline">Helpline Details</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Master Footer -->
+  <footer class="master-footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4 class="footer-brand">SWAROOP<span>.inc</span></h4>
+        <p class="footer-about">
+          Purveyors of timeless acoustic reproduction and vintage electronic instruments.
+        </p>
+        <p class="footer-support-phone">Helpline: +1 (800) 555-SWAROOP</p>
+      </div>
+
+      <div class="footer-col">
+        <h5>Sovereign Departments</h5>
+        <ul>
+          <li><a href="mobiles.html">Mobiles & Telephony</a></li>
+          <li><a href="electronics.html">Vintage Electronics</a></li>
+          <li><a href="clothes.html">Bespoke Attire</a></li>
+          <li><a href="footwear.html">Cordwainer Footwear</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Client Privileges</h5>
+        <ul>
+          <li><a href="../user/account.html">Client Dossier</a></li>
+          <li><a href="../user/order-tracking.html">Track Consignment</a></li>
+          <li><a href="../user/cart.html">Shopping Trunk</a></li>
+          <li><a href="../user/wishlist.html">Curated Desiderata</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Sovereignty & Terms</h5>
+        <ul>
+          <li><a href="../index.html">Change Territory / Currency</a></li>
+          <li><a href="../support/contact.html">Private Helplines</a></li>
+          <li><a href="../support/support-chat.html">Live Desk Support</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© MMXXVI SWAROOP.inc Private Limited. All Acoustic Works Calibrated to Imperial Standards.</p>
+    </div>
+  </footer>
+
+  <!-- Master JavaScript -->
+  <script src="../js/script.js"></script>
+</body>
+</html>

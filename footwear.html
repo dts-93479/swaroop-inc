@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SWAROOP.inc | Cordwainer Guild & Handcrafted Footwear</title>
+
+  <!-- Google Fonts: Old Money Serifs & Classic Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Playfair+Display:ital,wght@0,600;0,800;1,400&display=swap" rel="stylesheet">
+
+  <!-- Master CSS (Root reference ../css/style.css) -->
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body class="heritage-body">
+
+  <!-- Announcement Bar -->
+  <div class="vintage-announcement-bar">
+    <p>👞 <em>Department IV: Cordwainer Guild</em> &nbsp;•&nbsp; Goodyear-Welted Soles, Hand-Burnished Patina & Oak-Bark Tanned Leather</p>
+  </div>
+
+  <!-- Global Header -->
+  <header class="master-header">
+    <div class="header-top-row">
+      <div class="locale-pill" onclick="window.location.href='../index.html'" title="Alter sovereignty & currency">
+        <span class="globe-icon">🌐</span>
+        <span id="displayCountry">Sovereign State: US</span> | 
+        <strong id="displayCurrency">USD ($)</strong>
+      </div>
+
+      <div class="brand-crest">
+        <a href="../home.html" class="brand-link">
+          <span class="monogram">S</span>
+          <h1 class="nav-brand-title">SWAROOP<span>.inc</span></h1>
+        </a>
+      </div>
+
+      <div class="header-utilities">
+        <a href="../user/account.html" class="util-link" title="Client Dossier">
+          <span class="util-icon">👤</span>
+          <span class="util-text">Dossier</span>
+        </a>
+        <a href="../user/wishlist.html" class="util-link" title="Wishlist">
+          <span class="util-icon">⚜️</span>
+          <span class="util-text">Saved (<span id="wishlistCount">0</span>)</span>
+        </a>
+        <a href="../user/cart.html" class="util-link cart-pill" title="Shopping Cart">
+          <span class="util-icon">💼</span>
+          <span class="util-text">Trunk (<span id="cartCount">0</span>)</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="master-nav">
+      <ul class="nav-links">
+        <li><a href="../home.html">Home Salon</a></li>
+        <li><a href="categories.html">All Categories</a></li>
+        <li><a href="mobiles.html">Bespoke Mobiles</a></li>
+        <li><a href="electronics.html">Vintage Electronics</a></li>
+        <li><a href="clothes.html">Attire</a></li>
+        <li><a href="footwear.html" class="active">Footwear</a></li>
+        <li><a href="../user/account.html">Client Dossier</a></li>
+        <li><a href="../support/contact.html">Concierge Desk</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Department Container -->
+  <main class="section-container category-page-container">
+
+    <!-- Breadcrumbs -->
+    <nav class="vintage-breadcrumbs">
+      <a href="../home.html">Emporium</a>
+      <span class="sep">/</span>
+      <a href="categories.html">Departments</a>
+      <span class="sep">/</span>
+      <span class="current">Cordwainer Footwear</span>
+    </nav>
+
+    <!-- Department Header Banner -->
+    <div class="category-header-banner vintage-frame">
+      <div class="corner-ornament corner-tl"></div>
+      <div class="corner-ornament corner-tr"></div>
+      <div class="corner-ornament corner-bl"></div>
+      <div class="corner-ornament corner-br"></div>
+
+      <span class="dept-index-roman">DEPARTMENT IV</span>
+      <h2 class="category-title">Handcrafted Cordwainer Footwear</h2>
+      <div class="divider-ornament"><span class="diamond">◆</span></div>
+      <p class="category-description">
+        Shoes built upon carved wooden lasts according to 200-year-old Northamptonshire benchmarks. Featuring oak-bark tanned leather soles, channeled welt stitching, and French box calfskin finished with hand-rubbed wax patinas.
+      </p>
+    </div>
+
+    <!-- Filter & Sort Controls -->
+    <div class="catalog-controls-bar">
+      <div class="filter-group">
+        <label for="leatherFilter">Construction Style:</label>
+        <div class="select-wrapper">
+          <select id="leatherFilter" onchange="filterProductsByMaterial(this.value)">
+            <option value="all">All Lasts & Leathers</option>
+            <option value="goodyear">Goodyear-Welted Brogues</option>
+            <option value="boot">Full-Grain Leather Boots</option>
+            <option value="velvet">Embroidered House Slippers</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <label for="priceSort">Order Ledger:</label>
+        <div class="select-wrapper">
+          <select id="priceSort" onchange="sortCatalogProducts(this.value)">
+            <option value="curated">Curator's Choice</option>
+            <option value="asc">Valuation: Modest to Sovereign</option>
+            <option value="desc">Valuation: Sovereign to Modest</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product Grid -->
+    <div class="product-grid" id="footwearProductGrid">
+
+      <!-- Product 1 -->
+      <article class="product-card" data-id="P104" data-material="goodyear">
+        <span class="deal-ribbon">15% Courtesy</span>
+        <div class="product-img-box">
+          <span class="mock-item-art">👞</span>
+        </div>
+        <div class="product-details">
+          <span class="product-category">Footwear • Goodyear Welted</span>
+          <h4 class="product-name">Hand-Burnished Oxford Brogues</h4>
+          <p class="product-desc">Full-brogue wingtip pattern in antique cognac calfskin with oak-bark channel soles.</p>
+          <div class="price-wrap">
+            <span class="original-price" data-base-price="450">$450</span>
+            <span class="current-price" data-base-price="380">$380</span>
+          </div>
+          <div class="card-btn-group">
+            <button class="btn-small-gold" onclick="handleAddToCart('P104')">Add to Trunk</button>
+            <button class="btn-small-icon" onclick="handleAddToWishlist('P104')" title="Add to Wishlist">⚜️</button>
+            <a href="product-details.html?id=P104" class="btn-small-outline">Inspect</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Product 2 -->
+      <article class="product-card" data-id="P114" data-material="boot">
+        <div class="product-img-box">
+          <span class="mock-item-art">🥾</span>
+        </div>
+        <div class="product-details">
+          <span class="product-category">Footwear • French Calf</span>
+          <h4 class="product-name">Equestrian Chelsea Boot</h4>
+          <p class="product-desc">Single-piece wholecut French box calf with beveled waist and stacked leather heel.</p>
+          <div class="price-wrap">
+            <span class="current-price" data-base-price="520">$520</span>
+          </div>
+          <div class="card-btn-group">
+            <button class="btn-small-gold" onclick="handleAddToCart('P114')">Add to Trunk</button>
+            <button class="btn-small-icon" onclick="handleAddToWishlist('P114')" title="Add to Wishlist">⚜️</button>
+            <a href="product-details.html?id=P114" class="btn-small-outline">Inspect</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Product 3 -->
+      <article class="product-card" data-id="P115" data-material="velvet">
+        <span class="deal-ribbon">Estate Lounge</span>
+        <div class="product-img-box">
+          <span class="mock-item-art">🥿</span>
+        </div>
+        <div class="product-details">
+          <span class="product-category">Lounge • Velvet & Gold Thread</span>
+          <h4 class="product-name">The Sovereign Albert Slipper</h4>
+          <p class="product-desc">Midnight velvet with hand-embroidered gold bullion crest and quilted silk footbed.</p>
+          <div class="price-wrap">
+            <span class="current-price" data-base-price="410">$410</span>
+          </div>
+          <div class="card-btn-group">
+            <button class="btn-small-gold" onclick="handleAddToCart('P115')">Add to Trunk</button>
+            <button class="btn-small-icon" onclick="handleAddToWishlist('P115')" title="Add to Wishlist">⚜️</button>
+            <a href="product-details.html?id=P115" class="btn-small-outline">Inspect</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Product 4 -->
+      <article class="product-card" data-id="P116" data-material="goodyear">
+        <div class="product-img-box">
+          <span class="mock-item-art">👞</span>
+        </div>
+        <div class="product-details">
+          <span class="product-category">Footwear • Vintage Two-Tone</span>
+          <h4 class="product-name">Vintage Ascot Spectator Shoe</h4>
+          <p class="product-desc">Two-tone dark espresso calfskin paired with natural linen canvas panels.</p>
+          <div class="price-wrap">
+            <span class="original-price" data-base-price="490">$490</span>
+            <span class="current-price" data-base-price="420">$420</span>
+          </div>
+          <div class="card-btn-group">
+            <button class="btn-small-gold" onclick="handleAddToCart('P116')">Add to Trunk</button>
+            <button class="btn-small-icon" onclick="handleAddToWishlist('P116')" title="Add to Wishlist">⚜️</button>
+            <a href="product-details.html?id=P116" class="btn-small-outline">Inspect</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- Cordwainer Last Consultation Banner -->
+    <section class="concierge-cta-bar" style="margin-top: 4rem;">
+      <div class="cta-inner">
+        <div class="cta-text">
+          <h3>Carved Wooden Last Storage & Bespoke Shoe Trees</h3>
+          <p>Every patron receives complimentary cedar shoe trees turned to the exact dimensions of their footwear to preserve structure and aroma.</p>
+        </div>
+        <div class="cta-buttons">
+          <a href="../support/support-chat.html" class="btn-retro-gold">Inquire with Cordwainer</a>
+          <a href="../support/contact.html" class="btn-retro-outline">Helpline Numbers</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Master Footer -->
+  <footer class="master-footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4 class="footer-brand">SWAROOP<span>.inc</span></h4>
+        <p class="footer-about">
+          A timeless emporium dedicated to refined taste, mechanical excellence, and tailored craftsmanship.
+        </p>
+        <p class="footer-support-phone">Helpline: +1 (800) 555-SWAROOP</p>
+      </div>
+
+      <div class="footer-col">
+        <h5>Sovereign Departments</h5>
+        <ul>
+          <li><a href="mobiles.html">Mobiles & Telephony</a></li>
+          <li><a href="electronics.html">Vintage Electronics</a></li>
+          <li><a href="clothes.html">Bespoke Attire</a></li>
+          <li><a href="footwear.html">Cordwainer Footwear</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Client Privileges</h5>
+        <ul>
+          <li><a href="../user/account.html">Client Dossier</a></li>
+          <li><a href="../user/order-tracking.html">Track Consignment</a></li>
+          <li><a href="../user/cart.html">Shopping Trunk</a></li>
+          <li><a href="../user/wishlist.html">Curated Desiderata</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Sovereignty & Terms</h5>
+        <ul>
+          <li><a href="../index.html">Change Territory / Currency</a></li>
+          <li><a href="../support/contact.html">Private Helplines</a></li>
+          <li><a href="../support/support-chat.html">Live Desk Support</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© MMXXVI SWAROOP.inc Private Limited. Cordwainer Works Guild Warranted.</p>
+    </div>
+  </footer>
+
+  <!-- Master JavaScript -->
+  <script src="../js/script.js"></script>
+</body>
+</html>

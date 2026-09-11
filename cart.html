@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SWAROOP.inc | Shopping Trunk & Acquisitions</title>
+
+  <!-- Google Fonts: Old Money Serifs & Classic Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Playfair+Display:ital,wght@0,600;0,800;1,400&display=swap" rel="stylesheet">
+
+  <!-- Master CSS (Root reference ../css/style.css) -->
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body class="heritage-body">
+
+  <!-- Announcement Bar -->
+  <div class="vintage-announcement-bar">
+    <p>💼 <em>Discreet Carriage</em> &nbsp;•&nbsp; Complimentary Diplomatic Pouch Courier on All Curated Acquisitions</p>
+  </div>
+
+  <!-- Global Header -->
+  <header class="master-header">
+    <div class="header-top-row">
+      <div class="locale-pill" onclick="window.location.href='../index.html'" title="Alter sovereignty & currency">
+        <span class="globe-icon">🌐</span>
+        <span id="displayCountry">Sovereign State: US</span> | 
+        <strong id="displayCurrency">USD ($)</strong>
+      </div>
+
+      <div class="brand-crest">
+        <a href="../home.html" class="brand-link">
+          <span class="monogram">S</span>
+          <h1 class="nav-brand-title">SWAROOP<span>.inc</span></h1>
+        </a>
+      </div>
+
+      <div class="header-utilities">
+        <a href="account.html" class="util-link" title="Client Dossier">
+          <span class="util-icon">👤</span>
+          <span class="util-text">Dossier</span>
+        </a>
+        <a href="wishlist.html" class="util-link" title="Wishlist">
+          <span class="util-icon">⚜️</span>
+          <span class="util-text">Saved (<span id="wishlistCount">0</span>)</span>
+        </a>
+        <a href="cart.html" class="util-link cart-pill active-util" title="Shopping Cart">
+          <span class="util-icon">💼</span>
+          <span class="util-text">Cart (<span id="cartCount">0</span>)</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="master-nav">
+      <ul class="nav-links">
+        <li><a href="../home.html">Home Salon</a></li>
+        <li><a href="../catalog/categories.html">All Categories</a></li>
+        <li><a href="../catalog/mobiles.html">Bespoke Mobiles</a></li>
+        <li><a href="../catalog/electronics.html">Vintage Electronics</a></li>
+        <li><a href="../catalog/clothes.html">Attire</a></li>
+        <li><a href="../catalog/footwear.html">Footwear</a></li>
+        <li><a href="account.html">Client Dossier</a></li>
+        <li><a href="../support/contact.html">Concierge Desk</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Cart Chamber Container -->
+  <main class="section-container cart-page-container">
+    
+    <!-- Heading Banner -->
+    <div class="section-heading-wrap">
+      <span class="vintage-badge">BESPOKE MANIFEST</span>
+      <h2 class="section-title">Your Acquisition Trunk</h2>
+      <div class="divider-ornament"><span class="diamond">◆</span></div>
+      <p class="section-subtitle">Review items prepared for diplomatic packaging and courier dispatch</p>
+    </div>
+
+    <!-- Empty Trunk State (Toggled via JS if cart is empty) -->
+    <div id="emptyCartMessage" class="vintage-frame empty-state-box" style="display: none;">
+      <div class="empty-icon">💼</div>
+      <h3>Your Trunk Remains Vacant</h3>
+      <p>No masterworks or heirloom pieces have been selected for commissioning yet.</p>
+      <a href="../catalog/categories.html" class="btn-retro-gold">Inspect The Emporium Catalog</a>
+    </div>
+
+    <!-- Active Cart Layout (Items + Ledger Summary) -->
+    <div class="cart-layout-grid" id="cartContentWrapper">
+      
+      <!-- Left Column: Itemized List -->
+      <section class="cart-items-column">
+        <div class="vintage-frame cart-table-frame">
+          <div class="cart-table-header">
+            <span class="col-product">Acquisition</span>
+            <span class="col-price">Unit Value</span>
+            <span class="col-qty">Quantity</span>
+            <span class="col-total">Subtotal</span>
+            <span class="col-action">Discharge</span>
+          </div>
+
+          <!-- Dynamic Container for Cart Items injected by script.js -->
+          <div id="cartItemsList" class="cart-items-body">
+            <!-- Fallback Static Row for immediate review; overwritten by JS render -->
+            <div class="cart-row-item" data-id="P101">
+              <div class="col-product item-meta-cell">
+                <div class="item-visual-box">📱</div>
+                <div class="item-text-details">
+                  <h4>Monarch Gold Titanium Phone</h4>
+                  <p class="item-dept">Department: Telephony</p>
+                  <span class="item-stock-tag">In Atelier Vault</span>
+                </div>
+              </div>
+              <div class="col-price">
+                <span class="price-val" data-base-price="960">$960</span>
+              </div>
+              <div class="col-qty">
+                <div class="quantity-controller">
+                  <button type="button" class="qty-btn" onclick="updateItemQuantity('P101', -1)">−</button>
+                  <span class="qty-number" id="qty-P101">1</span>
+                  <button type="button" class="qty-btn" onclick="updateItemQuantity('P101', 1)">+</button>
+                </div>
+              </div>
+              <div class="col-total">
+                <strong class="price-val item-subtotal" data-base-price="960">$960</strong>
+              </div>
+              <div class="col-action">
+                <button type="button" class="btn-remove-item" onclick="removeCartItem('P101')" title="Remove from trunk">✕</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="cart-footer-actions">
+            <a href="../catalog/categories.html" class="btn-retro-outline">&larr; Continue Exploring Catalog</a>
+            <button type="button" class="btn-text-link font-danger" onclick="clearFullCart()">Empty Entire Trunk</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Right Column: Ledger Summary & Checkout Card -->
+      <aside class="cart-summary-column">
+        <div class="vintage-frame summary-card">
+          <div class="corner-ornament corner-tl"></div>
+          <div class="corner-ornament corner-tr"></div>
+          <div class="corner-ornament corner-bl"></div>
+          <div class="corner-ornament corner-br"></div>
+
+          <h3 class="summary-title">Financial Ledger</h3>
+          <div class="divider-ornament"><span class="diamond">◆</span></div>
+
+          <!-- Voucher / Seal Privilege Code -->
+          <div class="promo-box">
+            <label for="voucherCodeInput">Privilege Seal / Voucher</label>
+            <div class="promo-input-group">
+              <input 
+                type="text" 
+                id="voucherCodeInput" 
+                class="vintage-input" 
+                placeholder="e.g. HERITAGE15" 
+                uppercase 
+              />
+              <button type="button" class="btn-small-gold" onclick="applyVoucherCode()">Apply</button>
+            </div>
+            <p id="voucherFeedback" class="voucher-msg"></p>
+          </div>
+
+          <hr class="vintage-divider" />
+
+          <!-- Financial Breakdown -->
+          <div class="ledger-row">
+            <span>Manifest Subtotal</span>
+            <span id="cartSubtotal" class="price-val" data-base-price="960">$960.00</span>
+          </div>
+
+          <div class="ledger-row">
+            <span>Privilege Discount</span>
+            <span id="cartDiscount" class="price-val font-gold" data-base-price="0">-$0.00</span>
+          </div>
+
+          <div class="ledger-row">
+            <span>Diplomatic Courier Escort</span>
+            <span id="cartShipping" class="font-italic">Complimentary</span>
+          </div>
+
+          <div class="ledger-row">
+            <span>Estimated Sovereign Duties (5%)</span>
+            <span id="cartDuty" class="price-val" data-base-price="48">$48.00</span>
+          </div>
+
+          <hr class="vintage-divider" />
+
+          <div class="ledger-row total-row">
+            <strong>Grand Sovereign Total</strong>
+            <strong id="cartGrandTotal" class="price-val grand-price" data-base-price="1008">$1,008.00</strong>
+          </div>
+
+          <!-- Checkout Button -->
+          <div class="summary-actions">
+            <button type="button" class="btn-retro-gold btn-full" onclick="proceedToPayment()">
+              <span>Seal & Proceed to Payment</span>
+              <svg class="arrow-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </button>
+          </div>
+
+          <div class="summary-guarantee">
+            <span>🛡️ Encrypted Sovereign Settlement & Authenticated Heritage Papers</span>
+          </div>
+
+        </div>
+      </aside>
+
+    </div>
+
+  </main>
+
+  <!-- Master Footer -->
+  <footer class="master-footer">
+    <div class="footer-bottom">
+      <p>© MMXXVI SWAROOP.inc Private Limited. All Acquisitions Governed by Royal Commercial Code.</p>
+    </div>
+  </footer>
+
+  <!-- Master JavaScript -->
+  <script src="../js/script.js"></script>
+</body>
+</html>

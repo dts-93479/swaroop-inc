@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SWAROOP.inc | Sartorial Tailoring & Fine Apparel</title>
+
+  <!-- Google Fonts: Old Money Serifs & Classic Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Playfair+Display:ital,wght@0,600;0,800;1,400&display=swap" rel="stylesheet">
+
+  <!-- Master CSS (Root reference ../css/style.css) -->
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body class="heritage-body">
+
+  <!-- Announcement Bar -->
+  <div class="vintage-announcement-bar">
+    <p>🧥 <em>Department III: Sartorial Guild</em> &nbsp;•&nbsp; Pure Combed Cashmere, Savile Row Weaves & Horn Buttons</p>
+  </div>
+
+  <!-- Global Header -->
+  <header class="master-header">
+    <div class="header-top-row">
+      <div class="locale-pill" onclick="window.location.href='../index.html'" title="Alter sovereignty & currency">
+        <span class="globe-icon">🌐</span>
+        <span id="displayCountry">Sovereign State: US</span> | 
+        <strong id="displayCurrency">USD ($)</strong>
+      </div>
+
+      <div class="brand-crest">
+        <a href="../home.html" class="brand-link">
+          <span class="monogram">S</span>
+          <h1 class="nav-brand-title">SWAROOP<span>.inc</span></h1>
+        </a>
+      </div>
+
+      <div class="header-utilities">
+        <a href="../user/account.html" class="util-link" title="Client Dossier">
+          <span class="util-icon">👤</span>
+          <span class="util-text">Dossier</span>
+        </a>
+        <a href="../user/wishlist.html" class="util-link" title="Wishlist">
+          <span class="util-icon">⚜️</span>
+          <span class="util-text">Saved (<span id="wishlistCount">0</span>)</span>
+        </a>
+        <a href="../user/cart.html" class="util-link cart-pill" title="Shopping Cart">
+          <span class="util-icon">💼</span>
+          <span class="util-text">Trunk (<span id="cartCount">0</span>)</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="master-nav">
+      <ul class="nav-links">
+        <li><a href="../home.html">Home Salon</a></li>
+        <li><a href="categories.html">All Categories</a></li>
+        <li><a href="mobiles.html">Bespoke Mobiles</a></li>
+        <li><a href="electronics.html">Vintage Electronics</a></li>
+        <li><a href="clothes.html" class="active">Attire</a></li>
+        <li><a href="footwear.html">Footwear</a></li>
+        <li><a href="../user/account.html">Client Dossier</a></li>
+        <li><a href="../support/contact.html">Concierge Desk</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Department Container -->
+  <main class="section-container category-page-container">
+
+    <!-- Breadcrumbs -->
+    <nav class="vintage-breadcrumbs">
+      <a href="../home.html">Emporium</a>
+      <span class="sep">/</span>
+      <a href="categories.html">Departments</a>
+      <span class="sep">/</span>
+      <span class="current">Sartorial Attire</span>
+    </nav>
+
+    <!-- Department Header Banner -->
+    <div class="category-header-banner vintage-frame">
+      <div class="corner-ornament corner-tl"></div>
+      <div class="corner-ornament corner-tr"></div>
+      <div class="corner-ornament corner-bl"></div>
+      <div class="corner-ornament corner-br"></div>
+
+      <span class="dept-index-roman">DEPARTMENT III</span>
+      <h2 class="category-title">Sartorial Tailoring & Fine Attire</h2>
+      <div class="divider-ornament"><span class="diamond">◆</span></div>
+      <p class="category-description">
+        Garments shaped without haste. Sourced from centuries-old Scottish and Biella mills, our coats, dinner jackets, and knitwear feature uncanvassed hand-stitching, genuine horn buttons, and the world's softest combed fibers.
+      </p>
+    </div>
+
+    <!-- Filter & Sort Controls -->
+    <div class="catalog-controls-bar">
+      <div class="filter-group">
+        <label for="fabricFilter">Fabric Weave:</label>
+        <div class="select-wrapper">
+          <select id="fabricFilter" onchange="filterProductsByMaterial(this.value)">
+            <option value="all">All Noble Weaves</option>
+            <option value="cashmere">100% Mongolian Cashmere</option>
+            <option value="tweed">Authentic Harris Tweed</option>
+            <option value="silk">Mulberry Silk & Velvet</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <label for="priceSort">Order Ledger:</label>
+        <div class="select-wrapper">
+          <select id="priceSort" onchange="sortCatalogProducts(this.value)">
+            <option value="curated">Curator's Choice</option>
+            <option value="asc">Valuation: Modest to Sovereign</option>
+            <option value="desc">Valuation: Sovereign to Modest</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product Grid -->
+    <div class="product-grid" id="clothesProductGrid">
+
+      <!-- Product 1 -->
+      <article class="product-card" data-id="P103" data-material="cashmere">
+        <span class="deal-ribbon">Autumn Special</span>
+        <div class="product-img-box">
+          <span class="mock-item-art">🧥</span>
+        </div>
+        <div class="product-details">
+          <span class="product-category">Outerwear • 100% Cashmere</span>
+          <h4 class="product-name">Double-Breasted Cashmere Overcoat</h4>
+          <p class="product-desc">Combed grade-A Mongolian cashmere with hand-carved horn buttons and cupro lining.</p>
+          <div class="price-wrap">
+            <span class="original-price" data-base-price="600">$600</span>
+            <span class="current-price" data-base-price="490">$490</span>
+          </div>
+          <div class="card-btn-group">
+            <button class="btn-small-gold" onclick="handleAddToCart('P103')">Add to Trunk</button>
+            <button class="btn-small-icon" onclick="handleAddToWishlist('P103')" title="Add to Wishlist">⚜️</button>
+            <a href="product-details.html?id=P103" class="btn-small-outline">Inspect</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Product 2 -->
+      <article class="product-card" data-id="P111" data-material="tweed">
+        <div class="product-img-box">
+          <span class="mock-item-art">🧥</span>
+        </div>
+        <div class="product-details">
+          <span class="product-category">Tailoring • Scottish Wool</span>
+          <h4 class="product-name">Savile Row Houndstooth Blazer</h4>
+          <p class="product-desc">Heavyweight Harris tweed, floating horsehair canvas chest piece, and patch pockets.</p>
+          <div class="price-wrap">
+            <span class="current-price" data-base-price="780">$780</span>
+          </div>
+          <div class="card-btn-group">
+            <button class="btn-small-gold" onclick="handleAddToCart('P111')">Add to Trunk</button>
+            <button class="btn-small-icon" onclick="handleAddToWishlist('P111')" title="Add to Wishlist">⚜️</button>
+            <a href="product-details.html?id=P111" class="btn-small-outline">Inspect</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Product 3 -->
+      <article class="product-card" data-id="P112" data-material="silk">
+        <span class="deal-ribbon">Evening Salon</span>
+        <div class="product-img-box">
+          <span class="mock-item-art">🥻</span>
+        </div>
+        <div class="product-details">
+          <span class="product-category">Evening Wear • Mulberry Silk</span>
+          <h4 class="product-name">Mayfair Silk Quilted Smoking Jacket</h4>
+          <p class="product-desc">Deep bottle green silk velvet with braided frogging clasps and satin shawl collar.</p>
+          <div class="price-wrap">
+            <span class="current-price" data-base-price="650">$650</span>
+          </div>
+          <div class="card-btn-group">
+            <button class="btn-small-gold" onclick="handleAddToCart('P112')">Add to Trunk</button>
+            <button class="btn-small-icon" onclick="handleAddToWishlist('P112')" title="Add to Wishlist">⚜️</button>
+            <a href="product-details.html?id=P112" class="btn-small-outline">Inspect</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Product 4 -->
+      <article class="product-card" data-id="P113" data-material="cashmere">
+        <div class="product-img-box">
+          <span class="mock-item-art">🧶</span>
+        </div>
+        <div class="product-details">
+          <span class="product-category">Knitwear • Extrafine Merino</span>
+          <h4 class="product-name">Bespoke Cable Knit Cricket Jumper</h4>
+          <p class="product-desc">Traditional ecru wool with navy and burgundy tipping, spun in the Scottish Borders.</p>
+          <div class="price-wrap">
+            <span class="original-price" data-base-price="380">$380</span>
+            <span class="current-price" data-base-price="320">$320</span>
+          </div>
+          <div class="card-btn-group">
+            <button class="btn-small-gold" onclick="handleAddToCart('P113')">Add to Trunk</button>
+            <button class="btn-small-icon" onclick="handleAddToWishlist('P113')" title="Add to Wishlist">⚜️</button>
+            <a href="product-details.html?id=P113" class="btn-small-outline">Inspect</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- Fitting Consultation Banner -->
+    <section class="concierge-cta-bar" style="margin-top: 4rem;">
+      <div class="cta-inner">
+        <div class="cta-text">
+          <h3>Personal Measurement & Bespoke Clothier Service</h3>
+          <p>Schedule a private traveling tailor visit to your country residence or city suite for custom fittings.</p>
+        </div>
+        <div class="cta-buttons">
+          <a href="../support/support-chat.html" class="btn-retro-gold">Request Clothier Visit</a>
+          <a href="../support/contact.html" class="btn-retro-outline">Boutique Helplines</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Master Footer -->
+  <footer class="master-footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4 class="footer-brand">SWAROOP<span>.inc</span></h4>
+        <p class="footer-about">
+          A timeless emporium dedicated to refined taste, mechanical excellence, and tailored craftsmanship.
+        </p>
+        <p class="footer-support-phone">Helpline: +1 (800) 555-SWAROOP</p>
+      </div>
+
+      <div class="footer-col">
+        <h5>Sovereign Departments</h5>
+        <ul>
+          <li><a href="mobiles.html">Mobiles & Telephony</a></li>
+          <li><a href="electronics.html">Vintage Electronics</a></li>
+          <li><a href="clothes.html">Bespoke Attire</a></li>
+          <li><a href="footwear.html">Cordwainer Footwear</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Client Privileges</h5>
+        <ul>
+          <li><a href="../user/account.html">Client Dossier</a></li>
+          <li><a href="../user/order-tracking.html">Track Consignment</a></li>
+          <li><a href="../user/cart.html">Shopping Trunk</a></li>
+          <li><a href="../user/wishlist.html">Curated Desiderata</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Sovereignty & Terms</h5>
+        <ul>
+          <li><a href="../index.html">Change Territory / Currency</a></li>
+          <li><a href="../support/contact.html">Private Helplines</a></li>
+          <li><a href="../support/support-chat.html">Live Desk Support</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© MMXXVI SWAROOP.inc Private Limited. Tailoring Sanctioned Under European Guild Warrant.</p>
+    </div>
+  </footer>
+
+  <!-- Master JavaScript -->
+  <script src="../js/script.js"></script>
+</body>
+</html>

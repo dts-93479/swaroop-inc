@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SWAROOP.inc | Client Dossier & Archives</title>
+
+  <!-- Google Fonts: Old Money Serifs & Classic Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Playfair+Display:ital,wght@0,600;0,800;1,400&display=swap" rel="stylesheet">
+
+  <!-- Master CSS (Root reference ../css/style.css) -->
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body class="heritage-body">
+
+  <!-- Top Announcement Bar -->
+  <div class="vintage-announcement-bar">
+    <p>👑 <em>Private Client Chamber</em> &nbsp;•&nbsp; Exclusive Concierge Line: <strong>+1 (800) 555-SWAROOP</strong></p>
+  </div>
+
+  <!-- Global Header -->
+  <header class="master-header">
+    <div class="header-top-row">
+      <div class="locale-pill" onclick="window.location.href='../index.html'" title="Alter territory">
+        <span class="globe-icon">🌐</span>
+        <span id="displayCountry">Sovereign State: US</span> | 
+        <strong id="displayCurrency">USD ($)</strong>
+      </div>
+
+      <div class="brand-crest">
+        <a href="../home.html" class="brand-link">
+          <span class="monogram">S</span>
+          <h1 class="nav-brand-title">SWAROOP<span>.inc</span></h1>
+        </a>
+      </div>
+
+      <div class="header-utilities">
+        <a href="wishlist.html" class="util-link" title="Wishlist">
+          <span class="util-icon">⚜️</span>
+          <span class="util-text">Saved (<span id="wishlistCount">0</span>)</span>
+        </a>
+        <a href="cart.html" class="util-link cart-pill" title="Shopping Cart">
+          <span class="util-icon">💼</span>
+          <span class="util-text">Cart (<span id="cartCount">0</span>)</span>
+        </a>
+        <button class="btn-logout" onclick="handleLogout()" title="Relinquish Session">Exit Chamber</button>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="master-nav">
+      <ul class="nav-links">
+        <li><a href="../home.html">Home Salon</a></li>
+        <li><a href="../catalog/categories.html">All Categories</a></li>
+        <li><a href="../catalog/mobiles.html">Bespoke Mobiles</a></li>
+        <li><a href="../catalog/electronics.html">Vintage Electronics</a></li>
+        <li><a href="../catalog/clothes.html">Attire</a></li>
+        <li><a href="../catalog/footwear.html">Footwear</a></li>
+        <li><a href="account.html" class="active">Client Dossier</a></li>
+        <li><a href="../support/contact.html">Concierge Desk</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Dossier Main Content -->
+  <main class="section-container account-container">
+    
+    <!-- Member Header Card -->
+    <div class="account-hero-card vintage-frame">
+      <div class="corner-ornament corner-tl"></div>
+      <div class="corner-ornament corner-tr"></div>
+      <div class="corner-ornament corner-bl"></div>
+      <div class="corner-ornament corner-br"></div>
+
+      <div class="member-badge-row">
+        <div class="member-avatar">
+          <span class="avatar-wax-seal">⚜️</span>
+        </div>
+        <div class="member-identity">
+          <p class="member-rank">PATRON OF DISTINCTION</p>
+          <h2 id="userDisplayName">Lord Sterling Montgomery</h2>
+          <p class="member-meta">
+            Correspondence: <span id="userDisplayEmail">client@estate.com</span> &nbsp;|&nbsp; 
+            Primary Sovereign Residence: <strong id="userDisplayCountry">United States</strong>
+          </p>
+        </div>
+        <div class="member-tier-seal">
+          <span class="tier-label">ROYAL ROSTER</span>
+          <span class="tier-year">SINCE MMXXVI</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation Tabs / Section Selectors -->
+    <div class="dossier-layout">
+      <aside class="dossier-sidebar">
+        <ul class="dossier-tabs">
+          <li class="tab-item active" onclick="switchAccountTab('profileTab')">
+            <span class="tab-icon">📜</span> Personal Ledger
+          </li>
+          <li class="tab-item" onclick="switchAccountTab('ordersTab')">
+            <span class="tab-icon">📦</span> Consignments & Orders
+          </li>
+          <li class="tab-item" onclick="switchAccountTab('addressesTab')">
+            <span class="tab-icon">🏛️</span> Registered Estates
+          </li>
+          <li class="tab-item" onclick="window.location.href='order-tracking.html'">
+            <span class="tab-icon">🧭</span> Live Tracking
+          </li>
+          <li class="tab-item" onclick="window.location.href='../support/support-chat.html'">
+            <span class="tab-icon">💬</span> Private Butler Chat
+          </li>
+        </ul>
+      </aside>
+
+      <!-- Main Dynamic Content Panel -->
+      <section class="dossier-content vintage-frame">
+        
+        <!-- Tab 1: Profile Details -->
+        <div id="profileTab" class="account-tab-pane active">
+          <div class="pane-header">
+            <h3>Personal Credentials & Title</h3>
+            <p>Update your formal name, contact helpline, and security cipher.</p>
+          </div>
+          <form id="profileUpdateForm" class="vintage-form" onsubmit="handleUpdateProfile(event)">
+            <div class="form-row">
+              <div class="form-group flex-1">
+                <label for="editHonorific">Honorific</label>
+                <div class="select-wrapper">
+                  <select id="editHonorific">
+                    <option value="Lord">Lord</option>
+                    <option value="Lady">Lady</option>
+                    <option value="Sir">Sir</option>
+                    <option value="Mr." selected>Mr.</option>
+                    <option value="Mrs.">Mrs.</option>
+                    <option value="Dr.">Dr.</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group flex-3">
+                <label for="editFullName">Full Legal Name</label>
+                <input type="text" id="editFullName" class="vintage-input" value="Sterling Montgomery" required />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group flex-1">
+                <label for="editEmail">Official Correspondence</label>
+                <input type="email" id="editEmail" class="vintage-input" value="montgomery@countryestate.co.uk" required />
+              </div>
+              <div class="form-group flex-1">
+                <label for="editPhone">Telephone / Helpline</label>
+                <input type="tel" id="editPhone" class="vintage-input" value="+1 (555) 019-2834" required />
+              </div>
+            </div>
+
+            <button type="submit" class="btn-retro-gold">Seal Modifications</button>
+          </form>
+        </div>
+
+        <!-- Tab 2: Orders / Consignments -->
+        <div id="ordersTab" class="account-tab-pane" style="display: none;">
+          <div class="pane-header">
+            <h3>Acquisition Archive & Historical Ledger</h3>
+            <p>A record of fine items commissioned through SWAROOP.inc.</p>
+          </div>
+
+          <div class="orders-list-wrapper" id="ordersListContainer">
+            <!-- Sample Historical Order (Script will dynamically append new ones) -->
+            <article class="order-vintage-card">
+              <div class="order-card-header">
+                <div>
+                  <span class="order-id-label">Consignment Ref:</span>
+                  <strong>#SW-8942-MMXXVI</strong>
+                </div>
+                <div>
+                  <span class="order-date-label">Date of Seal:</span>
+                  <span>August 24, 2026</span>
+                </div>
+                <div>
+                  <span class="order-badge status-dispatched">In Transit Via Royal Post</span>
+                </div>
+              </div>
+
+              <div class="order-card-body">
+                <div class="order-item-thumb">📱</div>
+                <div class="order-item-info">
+                  <h4>Monarch Gold Titanium Phone</h4>
+                  <p>Quantity: 1 &nbsp;|&nbsp; Bespoke 24K Trim</p>
+                </div>
+                <div class="order-item-price">
+                  <span class="price-val" data-base-price="960">$960</span>
+                </div>
+              </div>
+
+              <div class="order-card-footer">
+                <a href="order-tracking.html?order=SW-8942-MMXXVI" class="btn-small-outline">Track Consignment &rarr;</a>
+                <button class="btn-small-gold" onclick="alert('The invoice scroll has been generated and dispatched to your correspondence.')">Request Invoice Scroll</button>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- Tab 3: Saved Addresses -->
+        <div id="addressesTab" class="account-tab-pane" style="display: none;">
+          <div class="pane-header">
+            <h3>Registered Residences & Estates</h3>
+            <p>Designate secure physical points of delivery for your trunks.</p>
+          </div>
+
+          <div class="address-grid" id="addressListContainer">
+            <div class="address-card default-address">
+              <span class="vintage-badge">PRIMARY RESIDENCE</span>
+              <h4>Highland Manor</h4>
+              <p>44 Kensington Palace Gardens</p>
+              <p>Royal Borough of Kensington, London W8 4QO</p>
+              <p>United Kingdom</p>
+              <div class="address-actions">
+                <button class="btn-text-link" onclick="alert('Address editing initiated.')">Edit Record</button>
+              </div>
+            </div>
+          </div>
+
+          <hr class="vintage-divider" />
+
+          <!-- Add New Address Form -->
+          <h4 class="form-sub-title">Register an Additional Estate</h4>
+          <form id="newAddressForm" class="vintage-form" onsubmit="handleAddAddress(event)">
+            <div class="form-row">
+              <div class="form-group flex-1">
+                <label for="estateName">Estate / Residence Title</label>
+                <input type="text" id="estateName" class="vintage-input" placeholder="e.g. Summer Villa" required />
+              </div>
+              <div class="form-group flex-2">
+                <label for="streetAddress">Street & House Number</label>
+                <input type="text" id="streetAddress" class="vintage-input" placeholder="e.g. 12 Mayfair Crescent" required />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group flex-1">
+                <label for="estateCity">City / Township</label>
+                <input type="text" id="estateCity" class="vintage-input" placeholder="e.g. London" required />
+              </div>
+              <div class="form-group flex-1">
+                <label for="estatePostal">Postal Zone</label>
+                <input type="text" id="estatePostal" class="vintage-input" placeholder="e.g. SW1A 1AA" required />
+              </div>
+            </div>
+
+            <button type="submit" class="btn-retro-gold">Record New Address</button>
+          </form>
+        </div>
+
+      </section>
+    </div>
+  </main>
+
+  <!-- Master Footer -->
+  <footer class="master-footer">
+    <div class="footer-bottom">
+      <p>© MMXXVI SWAROOP.inc Private Limited. Client Confidentiality Ensured.</p>
+    </div>
+  </footer>
+
+  <!-- Master JavaScript -->
+  <script src="../js/script.js"></script>
+</body>
+</html>

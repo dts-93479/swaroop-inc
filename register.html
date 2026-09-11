@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SWAROOP.inc | Petition for Private Membership</title>
+
+  <!-- Google Fonts: Old Money Serifs & Classic Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Playfair+Display:ital,wght@0,600;0,800;1,400&display=swap" rel="stylesheet">
+
+  <!-- Master CSS (Root reference ../css/style.css) -->
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body class="gateway-body">
+
+  <div class="gateway-overlay"></div>
+
+  <!-- Top Navigation Link to Return Home -->
+  <div class="auth-top-nav">
+    <a href="../home.html" class="heritage-back-link">
+      <span>&larr; Return to Grand Salon</span>
+    </a>
+  </div>
+
+  <!-- Registration Frame Container -->
+  <main class="gateway-wrapper">
+    <div class="vintage-frame auth-frame register-wide-frame">
+      <div class="corner-ornament corner-tl"></div>
+      <div class="corner-ornament corner-tr"></div>
+      <div class="corner-ornament corner-bl"></div>
+      <div class="corner-ornament corner-br"></div>
+
+      <!-- Brand Monogram & Crest -->
+      <header class="gateway-header">
+        <div class="wax-seal">
+          <span>S</span>
+        </div>
+        <p class="est-tagline">ESTABLISHED MMXXVI</p>
+        <h1 class="brand-title">Client Induction</h1>
+        <div class="divider-ornament">
+          <span class="diamond">◆</span>
+        </div>
+        <p class="sub-heading">Enlist your name into the sovereign registry of SWAROOP.inc</p>
+      </header>
+
+      <!-- Feedback / Alert Notification Box -->
+      <div id="registerAlert" class="auth-alert" style="display: none;"></div>
+
+      <!-- Registration Form -->
+      <form id="registerForm" class="vintage-form" onsubmit="handleRegister(event)">
+        
+        <!-- Full Name with Honorific -->
+        <div class="form-row">
+          <div class="form-group flex-1">
+            <label for="regHonorific">Honorific</label>
+            <div class="select-wrapper">
+              <select id="regHonorific" name="honorific">
+                <option value="Lord">Lord</option>
+                <option value="Lady">Lady</option>
+                <option value="Sir">Sir</option>
+                <option value="Madam">Madam</option>
+                <option value="Mr." selected>Mr.</option>
+                <option value="Mrs.">Mrs.</option>
+                <option value="Dr.">Dr.</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group flex-3">
+            <label for="regFullName">Full Legal Name</label>
+            <div class="input-wrapper">
+              <span class="input-icon">✒️</span>
+              <input 
+                type="text" 
+                id="regFullName" 
+                name="fullName" 
+                class="vintage-input" 
+                placeholder="e.g. Sterling Montgomery" 
+                required 
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Registered Email Address -->
+        <div class="form-group">
+          <label for="regEmail">Registered Correspondence (Email)</label>
+          <div class="input-wrapper">
+            <span class="input-icon">✉️</span>
+            <input 
+              type="email" 
+              id="regEmail" 
+              name="email" 
+              class="vintage-input" 
+              placeholder="montgomery@countryestate.co.uk" 
+              required 
+            />
+          </div>
+        </div>
+
+        <!-- Sovereign Territory & Preferred Currency -->
+        <div class="form-row">
+          <div class="form-group flex-1">
+            <label for="regCountry">Sovereign State</label>
+            <div class="select-wrapper">
+              <select id="regCountry" name="country" required>
+                <option value="US" data-currency="USD" data-symbol="$" data-rate="1.0">United States</option>
+                <option value="UK" data-currency="GBP" data-symbol="£" data-rate="0.79">United Kingdom</option>
+                <option value="IN" data-currency="INR" data-symbol="₹" data-rate="83.5">India</option>
+                <option value="EU" data-currency="EUR" data-symbol="€" data-rate="0.92">European Union</option>
+                <option value="JP" data-currency="JPY" data-symbol="¥" data-rate="155.0">Japan</option>
+                <option value="AE" data-currency="AED" data-symbol="AED " data-rate="3.67">United Arab Emirates</option>
+                <option value="CH" data-currency="CHF" data-symbol="CHF " data-rate="0.90">Switzerland</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group flex-1">
+            <label for="regPhone">Helpline / Mobile Contact</label>
+            <div class="input-wrapper">
+              <span class="input-icon">📞</span>
+              <input 
+                type="tel" 
+                id="regPhone" 
+                name="phone" 
+                class="vintage-input" 
+                placeholder="+1 (555) 019-2834" 
+                required 
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Secret Cipher / Passwords -->
+        <div class="form-row">
+          <div class="form-group flex-1">
+            <label for="regPassword">Master Cipher (Password)</label>
+            <div class="input-wrapper">
+              <span class="input-icon">🗝️</span>
+              <input 
+                type="password" 
+                id="regPassword" 
+                name="password" 
+                class="vintage-input" 
+                placeholder="At least 6 characters" 
+                minlength="6"
+                required 
+              />
+            </div>
+          </div>
+
+          <div class="form-group flex-1">
+            <label for="regConfirmPassword">Confirm Cipher</label>
+            <div class="input-wrapper">
+              <span class="input-icon">🛡️</span>
+              <input 
+                type="password" 
+                id="regConfirmPassword" 
+                name="confirmPassword" 
+                class="vintage-input" 
+                placeholder="Re-enter cipher" 
+                minlength="6"
+                required 
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Agreement Checkbox -->
+        <div class="form-auxiliary">
+          <label class="custom-checkbox">
+            <input type="checkbox" id="regTerms" required />
+            <span class="checkmark"></span>
+            <span class="checkbox-label">I assent to the Sovereign Charter and Protocols of Discretion.</span>
+          </label>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="form-actions">
+          <button type="submit" class="btn-retro-gold btn-full">
+            <span>Seal Membership Roll</span>
+            <svg class="arrow-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Switch to Login -->
+        <div class="auth-switch">
+          <p>Already an inducted patron?</p>
+          <a href="login.html" class="btn-retro-outline btn-full">Present Existing Credentials (Login)</a>
+        </div>
+
+      </form>
+
+      <!-- Footer Seal -->
+      <footer class="gateway-footer">
+        <p>Helpline Registry Assistance: <strong>+1 (800) 555-SWAROOP</strong></p>
+        <p class="heritage-rights">© MMXXVI SWAROOP.inc Private Limited.</p>
+      </footer>
+
+    </div>
+  </main>
+
+  <!-- Master JavaScript (Root reference ../js/script.js) -->
+  <script src="../js/script.js"></script>
+</body>
+</html>
